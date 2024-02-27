@@ -6,6 +6,8 @@ class Home(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     title_image = models.ImageField(upload_to="home_title_image/")
+    logo_image = models.ImageField(null=True)
+    footer = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return f"Home"

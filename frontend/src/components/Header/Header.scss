@@ -1,0 +1,56 @@
+.dark-gray {
+    color: #33343F;
+    background: #33343F;
+  }
+  
+  .header-container {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 500px;
+    display: inline-flex;
+  }
+  
+  .logo {
+    width: 76px;
+    height: 76px;
+  }
+  
+  .navbar {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 26px;
+    display: flex;
+  }
+  
+  .nav-buttons {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 17px;
+    display: flex;
+  }
+  
+  /* Apply dark-gray class to relevant elements */
+  .nav-button, .join-us-button {
+    font-size: 16px;
+    font-family: Azeret Mono;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+  
+  .nav-button {
+    @extend .dark-gray;
+  }
+  
+  .join-us-button {
+    padding: 10px;
+    @extend .dark-gray;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    color: white;
+  }
+  

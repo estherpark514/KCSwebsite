@@ -4,7 +4,7 @@ from ..models import Home, MissionSection, AboutUs, ProgressSection, SponsorSect
 class HomeSerializer(ModelSerializer):
     class Meta:
         model = Home
-        fields = ('id', 'title', 'subtitle', 'title_image')
+        fields = ('id', 'title', 'subtitle', 'title_image', 'logo_image', 'footer')
 
 class MissionSectionSerializer(ModelSerializer):
     class Meta:
