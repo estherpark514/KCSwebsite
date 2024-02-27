@@ -1,7 +1,4 @@
-.dark-gray {
-  color: #33343F;
-  background: #33343F;
-}
+@import '../../styles/colors.scss'; // Import the dark-gray class
 
 .home-title-container {
     width: 100%;
@@ -60,8 +57,6 @@
     width: 643px;
     height: 501px;
   }
-
-  /* MissionSection Styles */
 
 .mission-section-container {
   width: 100%;

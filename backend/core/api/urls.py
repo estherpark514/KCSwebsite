@@ -4,6 +4,7 @@ from website.api.urls import (
     mission_section_router,
     about_us_router,
     progress_section_router,
+    sponsor_information_section_router,
     sponsor_section_router,
     roles_router,
     executive_router,
@@ -33,6 +34,9 @@ router.registry.extend(about_us_router.registry)
 router.registry.extend(progress_section_router.registry)
 
 # Sponsor Section
+router.registry.extend(sponsor_information_section_router.registry)
+
+# Sponsors Section
 router.registry.extend(sponsor_section_router.registry)
 
 # Roles

@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from ..models import Home, MissionSection, AboutUs, ProgressSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
+from ..models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
 
 class HomeSerializer(ModelSerializer):
     class Meta:
@@ -21,6 +21,11 @@ class ProgressSectionSerializer(ModelSerializer):
         model = ProgressSection
         fields = ('id', 'progress_name', 'progress_stat')
 
+class SponsorInformationSectionSerializer(ModelSerializer):
+    class Meta:
+        model = SponsorInformationSection
+        fields = ('id', 'title', 'subtitle')
+        
 class SponsorSectionSerializer(ModelSerializer):
     class Meta:
         model = SponsorSection

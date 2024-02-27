@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
+from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
 
 #Home
 class MissionSectionInline(admin.StackedInline):
@@ -16,13 +16,16 @@ class ProgressSectionInline(admin.StackedInline):
     model = ProgressSection
     extra = 1
 
+class SponsorInformationSectionInline(admin.StackedInline):
+    model = SponsorInformationSection
+    extra = 1
 class SponsorSectionInline(admin.StackedInline):
     model = SponsorSection
     extra = 1
 
 #About Us
 class AboutUsAdmin(admin.ModelAdmin):
-    inlines = [ProgressSectionInline, SponsorSectionInline]
+    inlines = [ProgressSectionInline, SponsorInformationSectionInline, SponsorSectionInline]
 
 admin.site.register(AboutUs, AboutUsAdmin)
 

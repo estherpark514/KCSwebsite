@@ -44,12 +44,20 @@ class ProgressSection(models.Model):
         return f"Progress Section - {self.id}"
 
 
+class SponsorInformationSection(models.Model):
+    about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Sponsor Section"
+                                
 class SponsorSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
     sponsor_logo = models.ImageField(upload_to="about_us/sponsor_section_logos/")
 
     def __str__(self):
-        return f"Sponsor Section - {self.id}"
+        return f"Sponsors - {self.id}"
 
 
 # Roles

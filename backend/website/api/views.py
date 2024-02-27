@@ -4,6 +4,7 @@ from ..models import (
     MissionSection,
     AboutUs,
     ProgressSection,
+    SponsorInformationSection,
     SponsorSection,
     Roles,
     Executive,
@@ -22,6 +23,7 @@ from .serializers import (
     MissionSectionSerializer,
     AboutUsSerializer,
     ProgressSectionSerializer,
+    SponsorInformationSectionSerializer,
     SponsorSectionSerializer,
     RolesSerializer,
     ExecutiveSerializer,
@@ -54,6 +56,9 @@ class ProgressSectionViewSet(ModelViewSet):
     queryset = ProgressSection.objects.all()
     serializer_class = ProgressSectionSerializer
 
+class SponsorInformationSectionViewSet(ModelViewSet):
+    queryset = SponsorInformationSection.objects.all()
+    serializer_class = SponsorInformationSectionSerializer
 class SponsorSectionViewSet(ModelViewSet):
     queryset = SponsorSection.objects.all()
     serializer_class = SponsorSectionSerializer

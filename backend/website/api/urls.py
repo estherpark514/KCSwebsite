@@ -4,6 +4,7 @@ from .views import (
     MissionSectionViewSet,
     AboutUsViewSet,
     ProgressSectionViewSet,
+    SponsorInformationSectionViewSet,
     SponsorSectionViewSet,
     RolesViewSet,
     ExecutiveViewSet,
@@ -31,6 +32,9 @@ progress_section_router.register(r"progress-section", ProgressSectionViewSet)
 
 sponsor_section_router = DefaultRouter()
 sponsor_section_router.register(r"sponsor-section", SponsorSectionViewSet)
+
+sponsor_information_section_router = DefaultRouter()
+sponsor_information_section_router.register(r"sponsor-information-section", SponsorInformationSectionViewSet)
 
 roles_router = DefaultRouter()
 roles_router.register(r"roles", RolesViewSet)
