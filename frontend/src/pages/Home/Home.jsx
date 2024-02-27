@@ -3,45 +3,38 @@ import "./Home.scss";
 
 function Home() {
   const [HomeData, setHome] = useState([]);
-  useEffect(() => {
-    async function fetchHomeData() {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}home`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setHome(result[0]);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      }
-    }
-
-    fetchHomeData();
-  }, []);
-
   const [MissionData, setMission] = useState([]);
+  
   useEffect(() => {
-    async function fetchMissionData() {
+    async function fetchData() {
       try {
-        const response = await fetch(
+        const homeResponse = await fetch(`${import.meta.env.VITE_API_URL}home`);
+        const missionResponse = await fetch(
           `${import.meta.env.VITE_API_URL}mission-section`
         );
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`);
+  
+        if (!homeResponse.ok) {
+          throw new Error(`Failed to fetch home data. Status: ${homeResponse.status}`);
         }
+  
+        if (!missionResponse.ok) {
+          throw new Error(`Failed to fetch mission data. Status: ${missionResponse.status}`);
+        }
+  
+        const homeResult = await homeResponse.json();
+        const missionResult = await missionResponse.json();
+        
+        setHome(homeResult[0]);
+        setMission(missionResult[0]);
 
-        const result = await response.json();
-        setMission(result[0]);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
     }
-
-    fetchMissionData();
+  
+    fetchData();
   }, []);
-
+  
   return (
     <>
       <div className="home-title-container">

@@ -1,0 +1,106 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.outer-container {
+  @extend .dark-gray;
+  width: 100%;
+    height: 100%;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+  
+    .inner-container {
+      align-self: stretch;
+      height: 451px;
+      padding: 50px;
+      background: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 50px;
+      display: flex;
+  
+      .heading-section {
+        align-self: stretch;
+        height: 141px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        display: flex;
+  
+        .heading {
+            @extend .dark-gray;
+            @extend .heading2;
+            align-self: stretch;
+            text-align: center;
+        }
+  
+        .subheading {
+            @extend .dark-gray;
+            @extend .subheading1;
+            align-self: stretch;
+            height: 61px;
+            text-align: center;
+        }
+      }
+  
+      .content-section {
+        align-self: stretch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        display: inline-flex;
+  
+        .content {
+            @extend .dark-gray;
+            @extend .paragraph3;
+            flex: 1 1 0;
+            height: 160px;
+        }
+      }
+    }
+  }
+
+div {
+    margin: 20px;
+  
+    > div {
+      margin-bottom: 30px;
+  
+      h2 {
+        @extend .dark-gray;
+        @extend .heading2;
+      }
+  
+      h3 {
+        @extend .dark-gray;
+        @extend .subheading1;
+      }
+  
+      @import '../../components/ExecutiveAccordion/ExecutiveAccordion.scss';
+    }
+
+    > div {
+      margin-bottom: 30px;
+  
+      h2 {
+        @extend .dark-gray;
+        @extend .heading2;
+      }
+  
+      h3 {
+        @extend .dark-gray;
+        @extend .subheading1;
+      }
+  
+      @import '../../components/WebManagementAccordion/WebManagementAccordion.scss';
+    }
+  }
+  

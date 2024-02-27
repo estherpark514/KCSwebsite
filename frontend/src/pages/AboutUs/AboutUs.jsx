@@ -2,66 +2,52 @@ import React, { useEffect } from "react";
 import "./AboutUs.scss";
 
 function AboutUs() {
-  const [AboutUsData, setAboutUs] = useState([]);
-  useEffect(() => {
-    async function fetchAboutUsData() {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}about-us`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    const [AboutUsData, setAboutUs] = useState([]);
+    const [ProgressData, setProgress] = useState([]);
+    const [SponsorInfoData, setSponsorInfo] = useState([]);
+    const [SponsorData, setSponsor] = useState([]);
+    
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          // Fetch about us data
+          const aboutUsResponse = await fetch(`${import.meta.env.VITE_API_URL}about-us`);
+          if (!aboutUsResponse.ok) {
+            throw new Error(`Failed to fetch about us data. Status: ${aboutUsResponse.status}`);
+          }
+          const aboutUsResult = await aboutUsResponse.json();
+          setAboutUs(aboutUsResult[0]);
+    
+          // Fetch progress data
+          const progressResponse = await fetch(`${import.meta.env.VITE_API_URL}progress-section`);
+          if (!progressResponse.ok) {
+            throw new Error(`Failed to fetch progress data. Status: ${progressResponse.status}`);
+          }
+          const progressResult = await progressResponse.json();
+          setProgress(progressResult);
+    
+          // Fetch sponsor info data
+          const sponsorInfoResponse = await fetch(`${import.meta.env.VITE_API_URL}sponsor-information-section`);
+          if (!sponsorInfoResponse.ok) {
+            throw new Error(`Failed to fetch sponsor info data. Status: ${sponsorInfoResponse.status}`);
+          }
+          const sponsorInfoResult = await sponsorInfoResponse.json();
+          setSponsorInfo(sponsorInfoResult);
+    
+          // Fetch sponsor data
+          const sponsorResponse = await fetch(`${import.meta.env.VITE_API_URL}sponsor-section`);
+          if (!sponsorResponse.ok) {
+            throw new Error(`Failed to fetch sponsor data. Status: ${sponsorResponse.status}`);
+          }
+          const sponsorResult = await sponsorResponse.json();
+          setSponsor(sponsorResult);
+        } catch (error) {
+          console.error("Error fetching data:", error.message);
         }
-
-        const result = await response.json();
-        setAboutUs(result[0]);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
       }
-    }
-
-    fetchAboutUsData();
-  }, []);
-
-  const [ProgressData, setProgress] = useState([]);
-  useEffect(() => {
-    async function fetchProgressData() {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}progress-section`
-        );
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setProgress(result);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      }
-    }
-
-    fetchProgressData();
-  }, []);
-
-  const [SponsorData, setSponsor] = useState([]);
-  useEffect(() => {
-    async function fetchSponsorData() {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}sponsor-section`
-        );
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setSponsor(result);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      }
-    }
-
-    fetchSponsorData();
-  }, []);
+    
+      fetchData();
+    }, []);    
 
   const ProgressItem = ({ name, stat, moreLink }) => (
     <div className="progress-item">
@@ -101,16 +87,15 @@ function AboutUs() {
 
     <div className="sponsors-container">
       <div className="sponsors-header">
-        <div className="sponsors-title">{sponsorInformation.title}</div>
+        <div className="sponsors-title">{SponsorInfoData.title}</div>
         <div className="sponsors-description">
-          {sponsorInformation.description}
+          {SponsorInfoData.subtitle}
         </div>
       </div>
       <div className="sponsors-list">
-        {sponsorData.map((sponsor) => (
+        {SponsorData.map((sponsor) => (
           <div key={sponsor.id} className="sponsor-image">
             <img
-              style={{ width: "170px", height: "170px", borderRadius: "20px" }}
               src={sponsor.sponsor_logo}
               alt={`Sponsor ${sponsor.id}`}
             />
