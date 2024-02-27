@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 
 function Home() {
-  const [HomePageData, setHomePage] = useState([]);
+  const [HomeData, setHome] = useState([]);
 
   useEffect(() => {
     async function fetchHomeData() {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}HomePage`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}home`);
         if (!response.ok) {
           throw new Error(`Failed to fetch data. Status: ${response.status}`);
         }

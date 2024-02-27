@@ -29,7 +29,7 @@ class SponsorSectionSerializer(ModelSerializer):
 class RolesSerializer(ModelSerializer):
     class Meta:
         model = Roles
-        fields = ('id', 'title', 'subtitle', 'roles_description')
+        fields = ('id', 'title', 'subtitle', 'roles_description', 'executive_title', 'executive_description', 'website_management_title', 'website_management_description')
 
 class ExecutiveSerializer(ModelSerializer):
     class Meta:
