@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
 
 .header-container {
   width: 100%;
@@ -27,29 +28,20 @@
       display: flex;
 
       .nav-button {
-        color: #33343F;
-        font-size: 16px;
-        font-family: 'Azeret Mono', monospace;
-        font-weight: 400;
-        text-transform: uppercase;
-        word-wrap: break-word;
         @extend .dark-gray;
+        @extend .menu;
       }
     }
 
     .join-us-button {
+      @extend .dark-gray-container;
+      @extend .menu;
       padding: 10px;
       justify-content: center;
       align-items: center;
       gap: 10px;
       display: flex;
-      font-size: 16px;
-      font-family: 'Azeret Mono', monospace;
-      font-weight: 400;
-      text-transform: uppercase;
-      word-wrap: break-word;
       cursor: pointer;
-      @extend .dark-gray;
     }
   }
 }
