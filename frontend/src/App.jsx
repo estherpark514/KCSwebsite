@@ -8,7 +8,7 @@ import Resources from "./pages/Resources/Resources";
 import JoinUs from "./pages/JoinUs/JoinUs";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import "./App.scss";
+import "./App.css";
 
 function App() {
   return (
