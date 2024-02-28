@@ -1,0 +1,63 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+@import "../../components/HomeButton/HomeButton.scss";
+
+.home-section2 {
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+  
+    .home-section2-picture {
+      height: 700px;
+      object-fit: cover;
+      position: relative;
+      width: 550px;
+    }
+  
+    .home-section2-content {
+        @extend .dark-gray-container;
+      align-items: flex-start;
+      display: inline-flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      gap: 50px;
+      margin-left: -50px;
+      padding: 60px 150px 60px 70px;
+      position: relative;
+  
+      .home-section2-title {
+        @extend .paragraph1;
+        color: white;
+        align-self: stretch;
+        font-style: italic;
+        font-weight: bold;
+        margin-top: -1px;
+        position: relative;
+      }
+  
+      .home-section2-frame {
+        align-items: flex-start;
+        align-self: stretch;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+        width: 100%;
+  
+        .home-section2-subtitle {
+            @extend .paragraph3;
+            color: white;
+            margin-top: -1px;
+            position: relative;
+            width: 396px;
+        }
+  
+        .btn {
+            @extend .dark-gray;
+            background: white;
+        }
+      }
+    }
+  }
+  

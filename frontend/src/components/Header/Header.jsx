@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.scss";
-import HomeButton from "../HomeButton/HomeButton";
+import { HomeButton } from "../HomeButton/HomeButton";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
@@ -26,21 +26,19 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
-      <div className="header-container">
-        <img className="logo" src={logo.logo_image} alt="Logo" />
+    <div className="header">
+      <img className="logo" alt="Logo" src={logo.logo_image} />
+      <div className="nav-bar">
         <div className="navbar">
-          <div className="nav-buttons">
-            <div className="nav-button">Home</div>
-            <div className="nav-button">About Us</div>
-            <div className="nav-button">Roles</div>
-            <div className="nav-button">Programs</div>
-            <div className="nav-button">Resources</div>
-          </div>
-          <HomeButton name="Join Us" />
+          <div className="text-wrapper">HOME</div>
+          <div className="text-wrapper">ABOUT US</div>
+          <div className="text-wrapper">ROLES</div>
+          <div className="text-wrapper">PROGRAMS</div>
+          <div className="text-wrapper">RESOURCES</div>
         </div>
+        <HomeButton name="JOIN US" />
       </div>
-    </header>
+    </div>
   );
 };
 

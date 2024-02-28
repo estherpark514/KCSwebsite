@@ -24,34 +24,42 @@ const Footer = () => {
     fetchFooter();
   }, []);
   return (
-    <div className="footer-container">
-      <div className="footer-phrase-container">
-        <div>
-          <span className="footer-phrase">{footerData.footer}</span>
-        </div>
+    <div className="footer">
+      <div className="frame">
+        <p className="footer-phrase">{footerData.footer}</p>
       </div>
-      <div className="footer-link-container">
-        <div className="footer-column">
-          <div className="footer-each-section-title">General</div>
-          <div className="footer-section-container-1">
-            <div className="footer-each-section">About Us</div>
-            <div className="footer-each-section">Programs</div>
-            <div className="footer-each-section">Roles</div>
+      <div className="div">
+        <div className="frame-2">
+          <div className="text-wrapper-2">General</div>
+          <div className="frame-3">
+            <div className="text-wrapper-3">About Us</div>
+            <div className="text-wrapper-3">Programs</div>
+            <div className="text-wrapper-3">Roles</div>
           </div>
         </div>
-        <div className="footer-column">
-          <div className="footer-each-section-title">Get Involved</div>
-          <div className="footer-section-container-2">
-            <div className="footer-each-section">Students</div>
-            <div className="footer-each-section">Sponsors</div>
-            <div className="footer-each-section">Contact Us</div>
+        <div className="frame-2">
+          <div className="text-wrapper-2">Get Involved</div>
+          <div className="frame-3">
+            <div className="text-wrapper-3">Students</div>
+            <div className="text-wrapper-3">Sponsors</div>
+            <div className="text-wrapper-3">Contact Us</div>
           </div>
         </div>
-        <div className="footer-column">
-          <div className="footer-each-section-title">Social Media</div>
-          <div className="footer-section-container-3">
-            <div className="footer-each-section">Instagram</div>
-            <div className="footer-each-section">Github</div>
+        <div className="frame-2">
+          <div className="text-wrapper-2">Social Media</div>
+          <div className="frame-3">
+            <div
+              className="text-wrapper-3"
+              href="https://www.instagram.com/gt_kcs?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="
+            >
+              Instagram
+            </div>
+            <div
+              className="text-wrapper-3"
+              href="https://github.com/estherpark514/KCSwebsite"
+            >
+              Github
+            </div>
           </div>
         </div>
       </div>

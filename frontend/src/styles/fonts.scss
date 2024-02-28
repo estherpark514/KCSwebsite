@@ -4,8 +4,12 @@
 .menu {
     font-size: 16px;
     font-family: 'Azeret Mono';
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
     text-transform: uppercase;
     word-wrap: break-word;
+    white-space: nowrap;
 }
 
 .heading1 {
@@ -13,8 +17,10 @@
     font-family: 'Azeret Mono';
     font-weight: bold;
     line-height: 120%;
+    letter-spacing: 0%;
     text-transform: uppercase;
     word-wrap: break-word;
+    width: fit-content;
 }
 
 .heading2 {
@@ -42,6 +48,7 @@
     line-height: 167%;
     text-transform: capitalize;
     word-wrap: break-word;
+    width: fit-content;
 }
 
 .paragraph1 {

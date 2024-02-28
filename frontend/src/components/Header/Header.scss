@@ -1,50 +1,40 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
 
-.header-container {
-  box-sizing: border-box;
-  width: 100%;
-  background: lightgray;
-  display: flex;
-  justify-content: space-between;
+.header {
   align-items: center;
-  padding: 0 10% 0 10%;
-  margin: 1% 0 2% 0;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-flex;
+  gap: 30%;
+  position: relative;
 
   .logo {
-    width: 7%;
-    height: 7%;
-    margin: 0%;
+    height: 76px;
+    object-fit: cover;
+    position: relative;
+    width: 76px;
   }
 
-  .navbar {
-    box-sizing: border-box;
-    display: flex;
+  .nav-bar {
     align-items: center;
-    margin: 0%;
-    padding: 0%;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 2%;
+    position: relative;
 
-    .nav-buttons {
-      display: flex;
-      margin: 0;
-      gap: 5%;
+    .navbar {
+      align-items: flex-start;
+      display: inline-flex;
+      flex: 0 0 auto;
+      gap: 1%;
+      position: relative;
 
-      .nav-button {
+      .text-wrapper {
         @extend .dark-gray;
         @extend .menu;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
       }
-    }
-    @import "../../components/HomeButton/HomeButton.scss";
-    .btn {
-      margin: 0;
     }
   }
 }
-

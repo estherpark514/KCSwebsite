@@ -1,68 +1,60 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
 
-.footer-container {
-  box-sizing: border-box;
-  max-width: 100%;
-  height: 100%;
-  padding: 3% 10%;
-  margin: 2% 0% 0% 0%;
-  background: #d9d9d9;
+.footer {
+  // align-items: flex-start;
+  background-color: #D9D9D9;
   display: flex;
-  align-items: center;
+  gap: 10%;
+  padding: 2% 10%;
+  position: relative;
+  width: 100%;
+  margin: 0;
 
-  @media (max-width: 768px) {
-    padding: 50px 20px;
-  }
-
-  .footer-phrase-container {
-    margin: 0%;
-    padding: 0%;
-    display: flex;
-    width: 60%;
+  .frame {
+    text-align: left;
+    justify-content: center;
+    position: relative;
 
     .footer-phrase {
       @extend .dark-gray;
-      @extend .subheading1;
-      font-size: 30px;
-      line-height: 200%;
-      margin: 0%;
+      @extend .paragraph1;
+      font-style: italic;
+      position: relative;
+      width: fit-content;
     }
   }
 
-  .footer-link-container {
-    padding: 0%; /* Add padding to the left and right */
+  .div {
     display: flex;
-    margin: 0%;
-    justify-content: space-between;
-    gap: 10%;
+    position: relative;
+    text-align: left;
+    margin: 0;
 
-    .footer-column {
+    .frame-2 {
       display: flex;
       flex-direction: column;
-      margin: 0%;
+      position: relative;
 
-      .footer-each-section-title {
-        font-weight: bold;
-      }
-
-      .footer-each-section-title,
-      .footer-each-section {
+      .text-wrapper-2 {
         @extend .dark-gray;
         @extend .menu;
-        margin: 3% 0%;
-        text-transform: none;
-        white-space: nowrap;
+        font-weight: bold;
+        margin-top: -1px;
+        position: relative;
       }
 
-      .footer-section-container-1,
-      .footer-section-container-2,
-      .footer-section-container-3 {
+      .frame-3 {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 0%;
+        position: relative;
+
+        .text-wrapper-3 {
+          @extend .dark-gray;
+          @extend .menu;
+          margin-top: -1px;
+          position: relative;
+        }
       }
     }
   }
