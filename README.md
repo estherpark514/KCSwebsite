@@ -18,17 +18,13 @@ The creation of the GT KCS website was driven by a strong motivation to overcome
 
 Recognizing the need for effective communication, we aim to bridge the information gap within our community. A centralized website provides a streamlined channel for disseminating crucial updates, event details, and other pertinent information to our club members. This ensures that everyone stays informed and engaged, fostering a sense of unity and shared purpose.
 
-### Professionalism and Credibility
-
-A well-designed and regularly updated website adds a layer of professionalism and credibility to our organization. It reflects our commitment to excellence and innovation, showcasing our dedication to providing valuable resources and fostering a positive environment for our members. This professionalism not only enhances our reputation within the Georgia Tech community but also within the broader professional landscape.
-
 ### Innovation and Technological Proficiency
 
 As a community of computer scientists, embracing technological innovation is ingrained in our ethos. The development of the website using cutting-edge technologies such as Django Rest Framework and React.js not only aligns with our values but also showcases our proficiency in leveraging advanced tools to create impactful solutions.
 
-### External Visibility and Promotion
+### Professionalism and External Impact
 
-Beyond our immediate community, the GT KCS website serves as a powerful tool to promote our organization to external entities. By showcasing our activities, achievements, and the vibrant community we've cultivated, we aim to attract attention from potential sponsors, collaborators, and interested parties. This external visibility is essential for fostering partnerships and expanding the reach and impact of our club.
+The GT KCS website, meticulously designed and regularly updated, enhances our organization's professionalism and credibility, reflecting our commitment to excellence. This, in turn, increases the likelihood of attracting sponsors who recognize the value of our dedication. Beyond our community, the website serves as a powerful tool to showcase our activities and achievements, attracting attention from potential sponsors and expanding our club's impact.
 
 ## Description
 
