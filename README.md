@@ -1,5 +1,5 @@
 
-# GTKCS webite
+# GTKCS website
 
 Welcome to the official GitHub repository of the Georgia Institute of Technology Korean Computer Scientist (GT KCS) website.
 
