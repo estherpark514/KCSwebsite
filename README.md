@@ -14,15 +14,15 @@ Visit our website [here](#link)
 
 The creation of the GT KCS website was driven by a strong motivation to overcome challenges and enhance the overall experience for our community. The key motivations behind this initiative include:
 
-- Bridging Information Gap
+1. Bridging Information Gap
 
 Recognizing the need for effective communication, we aim to bridge the information gap within our community. A centralized website provides a streamlined channel for disseminating crucial updates, event details, and other pertinent information to our club members. This ensures that everyone stays informed and engaged, fostering a sense of unity and shared purpose.
 
-### Innovation and Technological Proficiency
+2. Innovation and Technological Proficiency
 
 As a community of computer scientists, embracing technological innovation is ingrained in our ethos. The development of the website using cutting-edge technologies such as Django Rest Framework and React.js not only aligns with our values but also showcases our proficiency in leveraging advanced tools to create impactful solutions.
 
-### Professionalism and External Impact
+3. Professionalism and External Impact
 
 The GT KCS website, meticulously designed and regularly updated, enhances our organization's professionalism and credibility, reflecting our commitment to excellence. This, in turn, increases the likelihood of attracting sponsors who recognize the value of our dedication. Beyond our community, the website serves as a powerful tool to showcase our activities and achievements, attracting attention from potential sponsors and expanding our club's impact.
 
