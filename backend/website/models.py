@@ -139,4 +139,15 @@ class MembershipBenefits(models.Model):
 class OpenRoles(models.Model):
     join_us = models.ForeignKey(JoinUs, on_delete=models.CASCADE)
     application_form_link = models.CharField(max_length=500)
-    ope
+    open_roles = models.TextField()
+
+    def __str__(self):
+        return f"Open Roles - {self.id}"
+
+
+class Sponsors(models.Model):
+    join_us = models.ForeignKey(JoinUs, on_delete=models.CASCADE)
+    instruction = models.TextField()
+
+    def __str__(self):
+        return f"Sponsors - {self.id}"
