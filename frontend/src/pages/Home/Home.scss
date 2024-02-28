@@ -3,13 +3,13 @@
 
 .home-title-container {
   box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 2% 0%;
+  display: flex;
+  justify-content: space-between;
   
   .text-container {
     display: flex;
@@ -22,8 +22,8 @@
       @extend .dark-gray;
       @extend .heading1;
       word-wrap: break-word;
-      margin: 0%;
-      width: 70%;
+      margin: 2% 0%;
+      width: 80%;
     }
     
     .subtitle {
@@ -33,9 +33,8 @@
       justify-content: flex-start;
       align-items: flex-start;
       display: flex;
-      margin: 0%;
+      margin: 2% 0%;
       width: 70%;
-      margin-top: 5%;
     }
 
     @import "../../components/HomeButton/HomeButton.scss";
@@ -43,6 +42,9 @@
 
   .title-image {
     width: 50%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
   }
 }
 
@@ -51,14 +53,15 @@
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 0 10% 0 10%;
+  margin: 2% 0%;
   justify-content: flex-start;
   align-items: center;
-  display: inline-flex;
+  display: flex;
 
   .mission-image {
-    width: calc(40% + 100px);
-    height: 700px;
-    margin-left: 100px;
+    width: 40%; /* Adjust the width */
+    height: auto; /* Let height adjust dynamically based on content */
     object-fit: cover;
   }
   
@@ -67,9 +70,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: calc(40% - 100px);
+    width: calc(50% - 100px); /* Adjust the width */
     height: auto;
-    padding: 3% 13% 3% 3%;
+    padding: 5% 8% 2% 5%; //top right bottom left
     margin-top: 1%;
     margin-right: 0%;
     flex-direction: column;
@@ -83,14 +86,15 @@
       color: white;
       font-style: italic;
       text-transform: uppercase;
-      line-height: 250%;
-      margin-bottom: 10px;
-      width: 75%;
+      line-height: 200%;
+      font-size: 30px;
+      margin: 0 0 10% 0;
+      width: 100%;
     }
     
     .description-container {
       align-self: stretch;
-      margin: 0%;
+      margin: 0;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
@@ -98,13 +102,16 @@
 
       .description {
         @extend .paragraph3;
-        width: 100%;
+        width: 90%;
         color: white;
+        margin: 0;
       }
+      
       @import "../../components/HomeButton/HomeButton.scss";
-      .custom-btn {
+      .btn {
         @extend .dark-gray;
         background: white;
+        font-weight: normal;
       }
     }
   }
@@ -118,7 +125,8 @@
     .mission-image {
       width: 100%;
       height: auto;
-      margin-left: 0;
     }
   }
 }
+
+

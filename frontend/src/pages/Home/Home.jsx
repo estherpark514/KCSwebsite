@@ -61,7 +61,7 @@ function Home() {
           <div className="main-text">"{missionData.mission_heading}"</div>
           <div className="description-container">
             <div className="description">{missionData.mission_subheading}</div>
-            <HomeButton name="Our Mission" className = "custon-btn" />
+            <HomeButton name="Our Mission" />
           </div>
         </div>
       </div>

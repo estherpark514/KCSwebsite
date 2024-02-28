@@ -37,7 +37,7 @@ const Header = () => {
             <div className="nav-button">Programs</div>
             <div className="nav-button">Resources</div>
           </div>
-          <HomeButton name = "Join Us" />
+          <HomeButton name="Join Us" />
         </div>
       </div>
     </header>
