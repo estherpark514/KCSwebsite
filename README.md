@@ -14,7 +14,7 @@ Visit our website [here](#link)
 
 The creation of the GT KCS website was driven by a strong motivation to overcome challenges and enhance the overall experience for our community. The key motivations behind this initiative include:
 
-### Bridging Information Gap
+- Bridging Information Gap
 
 Recognizing the need for effective communication, we aim to bridge the information gap within our community. A centralized website provides a streamlined channel for disseminating crucial updates, event details, and other pertinent information to our club members. This ensures that everyone stays informed and engaged, fostering a sense of unity and shared purpose.
 
