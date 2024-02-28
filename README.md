@@ -30,7 +30,7 @@ The GT KCS website, meticulously designed and regularly updated, enhances our or
 
 ### Figma Prototype
 
-We began our journey by creating a comprehensive prototype of the website using Figma. Explore our Figma prototype [here](#https://www.figma.com/proto/a7Y5R54AlNDmcG7zHNtHTz/webpage-design?type=design&node-id=3-4&t=XEcPpK40iMYaneqq-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=3%3A4&mode=design).
+We began our journey by creating a comprehensive prototype of the website using Figma. Explore our Figma prototype [here](https://www.figma.com/proto/a7Y5R54AlNDmcG7zHNtHTz/webpage-design?type=design&node-id=3-4&t=XEcPpK40iMYaneqq-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=3%3A4&mode=design).
 
 ### Technologies Used
 
