@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className="footer-link-container">
         <div className="footer-column">
-          <div className="footer-each-section">General</div>
+          <div className="footer-each-section-title">General</div>
           <div className="footer-section-container-1">
             <div className="footer-each-section">About Us</div>
             <div className="footer-each-section">Programs</div>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-column">
-          <div className="footer-each-section">Get Involved</div>
+          <div className="footer-each-section-title">Get Involved</div>
           <div className="footer-section-container-2">
             <div className="footer-each-section">Students</div>
             <div className="footer-each-section">Sponsors</div>
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-column">
-          <div className="footer-each-section">Social Media</div>
+          <div className="footer-each-section-title">Social Media</div>
           <div className="footer-section-container-3">
             <div className="footer-each-section">Instagram</div>
             <div className="footer-each-section">Github</div>

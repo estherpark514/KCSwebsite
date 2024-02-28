@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.scss";
+import HomeButton from "../HomeButton/HomeButton";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
@@ -36,7 +37,7 @@ const Header = () => {
             <div className="nav-button">Programs</div>
             <div className="nav-button">Resources</div>
           </div>
-          <div className="join-us-button">Join Us</div>
+          <HomeButton name = "Join Us" />
         </div>
       </div>
     </header>

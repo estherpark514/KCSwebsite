@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
+import HomeButton from "../../components/HomeButton/HomeButton";
 
 function Home() {
-  const [HomeData, setHome] = useState([]);
-  const [MissionData, setMission] = useState([]);
+  const [homeData, setHome] = useState([]);
+  const [missionData, setMission] = useState([]);
   
   useEffect(() => {
     async function fetchData() {
@@ -39,15 +40,13 @@ function Home() {
     <>
       <div className="home-title-container">
         <div className="text-container">
-          <div className="main-title">{HomeData.title}</div>
-          <div className="sub-title">{HomeData.subtite}</div>
-          <div className="get-involved-button">
-            <div>Get Involved</div>
-          </div>
+          <div className="main-title">{homeData.title}</div>
+          <div className="subtitle">{homeData.subtitle}</div>
+          <HomeButton name="Get Involved" />
         </div>
         <img
           className="title-image"
-          src={HomeData.title_image}
+          src={homeData.title_image}
           alt="Title Image"
         />
       </div>
@@ -55,16 +54,14 @@ function Home() {
       <div className="mission-section-container">
         <img
           className="mission-image"
-          src={MissionData.mission_image}
+          src={missionData.mission_image}
           alt="Mission Section Image"
         />
         <div className="text-container">
-          <div className="main-text">{MissionData.mission_heading}</div>
+          <div className="main-text">"{missionData.mission_heading}"</div>
           <div className="description-container">
-            <div className="description">{MissionData.mission_subheading}</div>
-            <div className="mission-button">
-              <div>OUR MISSION</div>
-            </div>
+            <div className="description">{missionData.mission_subheading}</div>
+            <HomeButton name="Our Mission" className = "custon-btn" />
           </div>
         </div>
       </div>
