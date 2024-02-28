@@ -1,8 +1,8 @@
-
+<center>
 # GTKCS website
+</center>
 
 Welcome to the official GitHub repository of the Georgia Institute of Technology Korean Computer Scientist (GT KCS) website.
-
 
 ## Introduction
 
@@ -49,12 +49,14 @@ In addition, we chose to implement SCSS instead of traditional CSS, leveraging i
 To set up and run the project locally, follow these steps:
 
 1. Clone the repository.
+
    ```bash
    git clone https://github.com/estherpark514/KCSwebsite.git
    cd your-repository
    ```
 
 2. Install dependencies for both the backend and frontend.
+
    ```bash
    # Install backend dependencies
    pip install -r requirements.txt
@@ -64,6 +66,7 @@ To set up and run the project locally, follow these steps:
    ```
 
 3. Run the development server.
+
    ```bash
    # Run backend server
    python manage.py runserver
