@@ -4,11 +4,15 @@
 .btn {
     @extend .dark-gray-container;
     @extend .menu;
+    color: white;
     padding: 10px;
-    margin-top: 5%;
-    margin-left: 0%;
+    margin: 0;
     justify-content: center;
     align-items: center;
     display: flex;
     cursor: pointer;
+}
+
+.btn:hover {
+    @extend .light-gray-container;
 }
