@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Home.scss";
-import { HomeButton } from "../../components/HomeButton/HomeButton";
-import { HomeSection1 } from "../../components/HomeSection1/HomeSection1";
-import { HomeSection2 } from "../../components/HomeSection2/HomeSection2";
+import { HomeSection1 } from "../components/HomeSections/HomeSection1/HomeSection1";
+import { HomeSection2 } from "../components/HomeSections/HomeSection2/HomeSection2";
 
 function Home() {
   const [homeData, setHome] = useState([]);

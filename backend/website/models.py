@@ -7,7 +7,7 @@ class Home(models.Model):
     subtitle = RichTextField()
     title_image = models.ImageField(upload_to="MEDIA/home/title_image/")
     logo_image = models.ImageField(null=True)
-    footer = models.CharField(max_length=200, null=True)
+    footer = RichTextField()
 
     def __str__(self):
         return f"Home"

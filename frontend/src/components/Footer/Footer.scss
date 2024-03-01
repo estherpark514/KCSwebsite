@@ -2,59 +2,80 @@
 @import '../../styles/fonts.scss';
 
 .footer {
+  box-sizing: border-box;
   // align-items: flex-start;
   background-color: #D9D9D9;
   display: flex;
-  gap: 10%;
-  padding: 2% 10%;
+  // gap: 10%;
   position: relative;
-  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   margin: 0;
+  margin-top: 2%;
+  padding: 3% 9.5%;
 
-  .frame {
-    text-align: left;
+  .footer-phrase {
+    @extend .dark-gray;
+    @extend .paragraph1;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 80%;
     justify-content: center;
     position: relative;
-
-    .footer-phrase {
-      @extend .dark-gray;
-      @extend .paragraph1;
-      font-style: italic;
-      position: relative;
-      width: fit-content;
-    }
+    width: fit-content;
+    padding: 0;
+    margin: 0;
   }
 
-  .div {
+  .footer-link-container {
+    // background: white;
+    box-sizing: border-box;
     display: flex;
     position: relative;
     text-align: left;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 35%;
+    // height: 40%;
     margin: 0;
+    padding: 0;
 
-    .frame-2 {
+    .footer-frame {
+      // background: lightgreen;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       position: relative;
+      padding: 0;
+      margin: 0;
+      // height: 100%;
 
-      .text-wrapper-2 {
+      .footer-wrapper-bolded {
         @extend .dark-gray;
         @extend .menu;
-        font-weight: bold;
-        margin-top: -1px;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        font-weight: 700;
         position: relative;
+        padding: 10px 0;
+        margin: 0;
       }
-
-      .frame-3 {
-        display: flex;
-        flex-direction: column;
+      .footer-wrapper {
+        @extend .dark-gray;
+        @extend .menu;
+        box-sizing: border-box;
+        text-transform: capitalize;
         position: relative;
-
-        .text-wrapper-3 {
-          @extend .dark-gray;
-          @extend .menu;
-          margin-top: -1px;
-          position: relative;
-        }
+        font-weight: 300;
+        padding: 10px 0;
+        margin: 0;
+        cursor: pointer;
+      }
+      .footer-wrapper:hover {
+        text-decoration: underline;
+        font-weight: 500;
       }
     }
   }

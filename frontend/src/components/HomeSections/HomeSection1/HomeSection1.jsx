@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeButton } from "../HomeButton/HomeButton";
+import { HomeButton } from "../../HomeButton/HomeButton";
 import "./HomeSection1.scss";
 
 export const HomeSection1 = ({ title, subtitle, img }) => {

@@ -2,18 +2,15 @@
 @import '../../styles/fonts.scss';
 
 .header {
-  // box-sizing: border-box;
-  background: lightblue;
+  box-sizing: border-box;
+  // background: lightblue;
   align-items: center;
   display: flex;
   justify-content: space-between;
   position: relative;
-  // width: 100vw;
-  // margin: 0 9.5%;
-  margin-left: 9.5%;
-  margin-right: 9.5%;
-  margin-top: 3.5%;
-  padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 2% 9.5%;
 
   .logo {
     height: 76px;
@@ -27,13 +24,14 @@
   .navbar {
     // background: darkgray;
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
     position: relative;
     margin: 0;
     padding: 0;
-    gap: 3%;
+    width: 50%;
+    // gap: 3%;
 
     a {
       @extend .dark-gray;
@@ -50,8 +48,9 @@
       text-decoration: none;
 
       &:hover {
-        color: darkblue;
         text-decoration: underline;
+        font-weight: bold;
+        // text-shadow: 0.5px 0.5px 0.5px black;
       }
     }
 

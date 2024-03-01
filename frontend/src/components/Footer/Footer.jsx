@@ -25,41 +25,36 @@ const Footer = () => {
   }, []);
   return (
     <div className="footer">
-      <div className="frame">
-        <p className="footer-phrase">{footerData.footer}</p>
-      </div>
-      <div className="div">
-        <div className="frame-2">
-          <div className="text-wrapper-2">General</div>
-          <div className="frame-3">
-            <div className="text-wrapper-3">About Us</div>
-            <div className="text-wrapper-3">Programs</div>
-            <div className="text-wrapper-3">Roles</div>
-          </div>
+      <div
+        className="footer-phrase"
+        dangerouslySetInnerHTML={{ __html: footerData.footer }}
+      />
+      <div className="footer-link-container">
+        <div className="footer-frame">
+          <div className="footer-wrapper-bolded">General</div>
+          <div className="footer-wrapper">About Us</div>
+          <div className="footer-wrapper">Programs</div>
+          <div className="footer-wrapper">Roles</div>
         </div>
-        <div className="frame-2">
-          <div className="text-wrapper-2">Get Involved</div>
-          <div className="frame-3">
-            <div className="text-wrapper-3">Students</div>
-            <div className="text-wrapper-3">Sponsors</div>
-            <div className="text-wrapper-3">Contact Us</div>
-          </div>
+        <div className="footer-frame">
+          <div className="footer-wrapper-bolded">Get Involved</div>
+          <div className="footer-wrapper">Students</div>
+          <div className="footer-wrapper">Sponsors</div>
+          <div className="footer-wrapper">Contact Us</div>
         </div>
-        <div className="frame-2">
-          <div className="text-wrapper-2">Social Media</div>
-          <div className="frame-3">
-            <div
-              className="text-wrapper-3"
-              href="https://www.instagram.com/gt_kcs?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="
-            >
-              Instagram
-            </div>
-            <div
-              className="text-wrapper-3"
-              href="https://github.com/estherpark514/KCSwebsite"
-            >
-              Github
-            </div>
+        <div className="footer-frame">
+          <div className="footer-wrapper-bolded">Social Media</div>
+          <div
+            className="footer-wrapper"
+            href="https://www.instagram.com/gt_kcs?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="
+          >
+            Instagram
+          </div>
+          <div
+            className="footer-wrapper"
+            href="https://github.com/estherpark514/KCSwebsite"
+          >
+            Github
           </div>
         </div>
       </div>
