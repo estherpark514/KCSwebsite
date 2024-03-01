@@ -2,49 +2,65 @@
 @import '../../styles/fonts.scss';
 
 .home-section1 {
+    // background: lightgreen;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    display: inline-flex;
-    gap: 58px;
     position: relative;
-    width: 100vw;
+    padding: 0;
+    margin: 0 9.5%;
+    margin-top: 6%;
+    // width: 100vw;
   
     .home-section1-content {
-      align-items: flex-start;
-      display: inline-flex;
-      flex: 0 0 auto;
+      display: flex;
       flex-direction: column;
-      gap: 50px;
+      align-items: flex-start;
+      height: fit-content;
       position: relative;
-  
-      .home-section1-title {
-        @extend .dark-gray;
-        @extend .heading1;
-        margin-top: -1px;
-        position: relative;
-        width: fit-content;
-      }
-  
-      .frame {
-        align-items: flex-start;
-        display: inline-flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        gap: 27px;
-        position: relative;
-  
-        .home-section1-subtitle {
-            @extend .dark-gray;
-            @extend .subheading1;
-            margin-top: -1px;
-            position: relative;
-        }
+      margin: 0;
+
+    .home-section1-title {
+      @extend .heading1;
+      @extend .dark-gray;
+      // background: darkgray;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-section1-frame {
+      // background: brown;
+      align-items: flex-start;
+      // align-self: stretch;
+      display: flex;
+      // flex: 0 0 auto;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      .home-section1-subtitle {
+          // background: darkgray;
+          @extend .subheading1;
+          @extend .dark-gray;
+          position: relative;
+          line-height: 70%;
+          font-weight: 300;
+          margin: 0;
+          padding: 0;
       }
     }
+  }
   
     .home-section1-picture {
-      height: 501px;
+      // background: lightpink;
+      height: 100%;
       object-fit: cover;
       position: relative;
-      width: 643px;
+      width: auto;
+      padding: 0;
+      margin: 0;
     }
   }

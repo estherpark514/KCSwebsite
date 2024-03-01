@@ -3,62 +3,69 @@
 @import "../../components/HomeButton/HomeButton.scss";
 
 .home-section2 {
-    align-items: center;
-    display: inline-flex;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 9.5%;
+  margin-top: 6%;
+
+  .home-section2-picture {
+    height: 100%;
+    object-fit: cover;
     position: relative;
-    width: 100vw;
-  
-    .home-section2-picture {
-      height: 700px;
-      object-fit: cover;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-section2-content {
+    @extend .dark-gray-container;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: fit-content;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box; // Include padding in width calculation
+
+    padding: 60px 100px 60px 70px; // Adjust padding as needed
+    margin-left: -50px;
+
+    .home-section2-title {
+      @extend .paragraph1;
+      color: white;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 90%;
       position: relative;
-      width: 550px;
+      margin: 0;
+      padding: 0;
     }
-  
-    .home-section2-content {
-        @extend .dark-gray-container;
+
+    .home-section2-frame {
       align-items: flex-start;
-      display: inline-flex;
-      flex: 0 0 auto;
+      display: flex;
       flex-direction: column;
-      gap: 50px;
-      margin-left: -50px;
-      padding: 60px 150px 60px 70px;
       position: relative;
-  
-      .home-section2-title {
-        @extend .paragraph1;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      .home-section2-subtitle {
+        @extend .paragraph3;
         color: white;
-        align-self: stretch;
-        font-style: italic;
-        font-weight: bold;
-        margin-top: -1px;
         position: relative;
+        line-height: 70%;
+        margin: 0;
+        padding: 0;
       }
-  
-      .home-section2-frame {
-        align-items: flex-start;
-        align-self: stretch;
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        gap: 30px;
-        position: relative;
-        width: 100%;
-  
-        .home-section2-subtitle {
-            @extend .paragraph3;
-            color: white;
-            margin-top: -1px;
-            position: relative;
-            width: 396px;
-        }
-  
-        .btn {
-            @extend .dark-gray;
-            background: white;
-        }
+
+      .btn {
+        @extend .dark-gray;
+        background: white;
+        // Add more button styles as needed
       }
     }
   }
-  
+}

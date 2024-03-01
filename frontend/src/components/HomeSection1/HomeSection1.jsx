@@ -6,9 +6,15 @@ export const HomeSection1 = ({ title, subtitle, img }) => {
   return (
     <div className="home-section1">
       <div className="home-section1-content">
-        <div className="home-section1-title"> {title}</div>
-        <div className="frame">
-          <p className="home-section1-subtitle">{subtitle}</p>
+        <div
+          className="home-section1-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <div className="home-section1-frame">
+          <div
+            className="home-section1-subtitle"
+            dangerouslySetInnerHTML={{ __html: subtitle }}
+          />
           <HomeButton name="Get Involved" />
         </div>
       </div>

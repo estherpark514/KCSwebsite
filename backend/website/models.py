@@ -1,11 +1,11 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 # Home
 class Home(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
-    title_image = models.ImageField(upload_to="home_title_image/")
+    title = RichTextField()
+    subtitle = RichTextField()
+    title_image = models.ImageField(upload_to="MEDIA/home/title_image/")
     logo_image = models.ImageField(null=True)
     footer = models.CharField(max_length=200, null=True)
 
@@ -16,9 +16,9 @@ class Home(models.Model):
 # MissionSection
 class MissionSection(models.Model):
     home = models.ForeignKey(Home, on_delete=models.CASCADE)
-    mission_heading = models.TextField()
-    mission_subheading = models.TextField()
-    mission_image = models.ImageField(upload_to="mission_image/")
+    mission_heading = RichTextField()
+    mission_subheading = RichTextField()
+    mission_image = models.ImageField(upload_to="MEDIA/home/mission_image/")
 
     def __str__(self):
         return self.mission_heading
@@ -29,7 +29,7 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     about_us_description = models.TextField()
-    image = models.ImageField(upload_to="about_us/title_section_images/")
+    image = models.ImageField(upload_to="MEDIA/about_us/title_section_images/")
 
     def __str__(self):
         return f"About Us"

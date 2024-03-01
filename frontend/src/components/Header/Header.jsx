@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { HomeButton } from "../HomeButton/HomeButton";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchHeader() {
@@ -27,16 +29,17 @@ const Header = () => {
 
   return (
     <div className="header">
-      <img className="logo" alt="Logo" src={logo.logo_image} />
-      <div className="nav-bar">
-        <div className="navbar">
-          <div className="text-wrapper">HOME</div>
-          <div className="text-wrapper">ABOUT US</div>
-          <div className="text-wrapper">ROLES</div>
-          <div className="text-wrapper">PROGRAMS</div>
-          <div className="text-wrapper">RESOURCES</div>
-        </div>
-        <HomeButton name="JOIN US" />
+      <Link to="/">
+        <img className="logo" alt="Logo" src={logo.logo_image} />
+      </Link>
+      <div className="navbar">
+        <Link to="/">HOME</Link>
+        <Link to="/about-us">ABOUT US</Link>
+        <Link to="/roles">ROLES</Link>
+        <Link to="/programs">PROGRAMS</Link>
+        <Link to="/resources">RESOURCES</Link>
+
+        <HomeButton onClick={() => navigate("/joinus")} name="JOIN US" />
       </div>
     </div>
   );

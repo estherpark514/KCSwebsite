@@ -3,13 +3,16 @@
 
 .header {
   // box-sizing: border-box;
-  // background: lightblue;
+  background: lightblue;
   align-items: center;
   display: flex;
   justify-content: space-between;
   position: relative;
   // width: 100vw;
-  margin: 0 5%;
+  // margin: 0 9.5%;
+  margin-left: 9.5%;
+  margin-right: 9.5%;
+  margin-top: 3.5%;
   padding: 0;
 
   .logo {
@@ -21,33 +24,43 @@
     padding: 0;
   }
 
-  .nav-bar {
+  .navbar {
     // background: darkgray;
     display: flex;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: space-between;
+    // justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
     position: relative;
     margin: 0;
     padding: 0;
+    gap: 3%;
 
-    .navbar {
-      grid-column: span 5;
-      display: flex;
+    a {
+      @extend .dark-gray;
+      @extend .menu;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      flex-shrink: 0;
+      // gap: 5%;
       position: relative;
+      width: fit-content;
       margin: 0;
       padding: 0;
+      // margin-left: 3%;
+      text-decoration: none;
 
-      .text-wrapper {
-        @extend .dark-gray;
-        @extend .menu;
-        position: relative;
-        width: fit-content;
-        grid-column: span 1;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
+      &:hover {
+        color: darkblue;
+        text-decoration: underline;
       }
+    }
+
+    .btn {
+      box-sizing: border-box;
+      // margin-left: 3%;
+      margin-right: 0;
+      flex: 0 0 auto;
+      flex-shrink: 0;
     }
   }
 }

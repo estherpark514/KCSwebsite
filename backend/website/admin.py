@@ -1,4 +1,6 @@
 from django.contrib import admin
+# from ckeditor.widgets import CKEditorWidget
+# from django import forms
 from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
 
 #Home
@@ -6,7 +8,17 @@ class MissionSectionInline(admin.StackedInline):
     model = MissionSection
     extra = 1
 
+# class HomeForm(forms.ModelForm):
+#     class Meta:
+#         model = Home
+#         fields = '__all__'
+#         widgets = {
+#             'title': CKEditorWidget(),
+#             'subtitle': CKEditorWidget(),
+#         }
+
 class HomeAdmin(admin.ModelAdmin):
+    # form = HomeForm
     inlines = [MissionSectionInline]
 
 admin.site.register(Home, HomeAdmin)
