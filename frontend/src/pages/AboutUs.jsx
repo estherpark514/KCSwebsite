@@ -14,7 +14,7 @@ function AboutUs() {
       try {
         // Fetch about us data
         const aboutUsResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}about-us`
+          `${import.meta.env.VITE_API_URL}about-us/`
         );
         if (!aboutUsResponse.ok) {
           throw new Error(
@@ -26,7 +26,7 @@ function AboutUs() {
 
         // Fetch progress data
         const progressResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}progress-section`
+          `${import.meta.env.VITE_API_URL}progress-section/`
         );
         if (!progressResponse.ok) {
           throw new Error(
@@ -38,7 +38,7 @@ function AboutUs() {
 
         // Fetch sponsor info data
         const sponsorInfoResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}sponsor-information-section`
+          `${import.meta.env.VITE_API_URL}sponsor-information-section/`
         );
         if (!sponsorInfoResponse.ok) {
           throw new Error(
