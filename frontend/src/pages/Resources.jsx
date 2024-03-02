@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
-import "./Resources.scss";
-import ResourceLinkContainer from "../../components/ResourceLinkContainer/ResourceLinkContainer";
+import React, { useEffect, useState } from "react";
+import { ResourcesSection1 } from "../components/ResourcesSections/ResourcesSection1/ResourcesSection1";
 
-function Programs() {
+function Resources() {
   const [ResourcesData, setResources] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const resourcesResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}resources`
+          `${import.meta.env.VITE_API_URL}resources/`
         );
 
         if (!resourcesResponse.ok) {
@@ -29,11 +28,6 @@ function Programs() {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      <h2>Resources</h2>
-      <ResourceLinkContainer resourceLinks={ResourcesData} />
-    </div>
-  );
+  return <ResourcesSection1 data={ResourcesData} />;
 }
-export default Programs;
+export default Resources;

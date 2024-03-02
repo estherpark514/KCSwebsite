@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
+import "./ResourceLinkContainer.scss";
+import { Button } from "../Button/Button";
 
-const ResourceLinkContainer = ({ resourceLinks }) => {
+export const ResourceLinkContainer = ({ resourceLinks }) => {
   return (
     <div className="resource-link-container">
       {resourceLinks.map((link, index) => (
         <React.Fragment key={link.id}>
           <div className="resource-link">
             <div className="link-title">{link.name}</div>
-            <a href={link.link} target="_blank" rel="noopener noreferrer" className="link-button">
-              Link
-            </a>
+            <Button name="link" link={link.link} />
           </div>
           {index < resourceLinks.length - 1 && <div className="divider"></div>}
         </React.Fragment>
@@ -17,5 +17,3 @@ const ResourceLinkContainer = ({ resourceLinks }) => {
     </div>
   );
 };
-
-export default ResourceLinkContainer;

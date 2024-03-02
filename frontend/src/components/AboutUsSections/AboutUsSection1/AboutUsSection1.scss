@@ -2,41 +2,60 @@
 @import '../../../styles/fonts.scss';
 
 .about-gtkcs-container {
-    width: 100%;
-    height: 100%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 23px;
-    display: inline-flex;
+    position: relative;
+    padding: 0;
+    margin: 0 11%;
+    margin-top: 3%;
   
     .about-gtkcs-image {
-      width: 643px;
-      height: 501px;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        width: auto;
+        padding: 0;
+        margin: 0;
     }
   
     .about-gtkcs-content {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 50px;
-      display: inline-flex;
+        box-sizing: border-box;
+        // background: lightgray;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: fit-content;
+        position: relative;
+        margin: 0;
+        padding: 1% 2%;
   
       .about-gtkcs-title {
         @extend .dark-gray;
         @extend .heading2;
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .about-gtkcs-subtitle {
+        @extend .dark-gray;
+        @extend .subheading1;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 70%;
+        font-weight: 300;
+        margin: 0;
+        padding: 5% 0 0 0;
       }
   
       .about-gtkcs-description {
         @extend .dark-gray;
-        @extend .subheading1;
-        font-weight: bold;
-      }
-  
-      .about-gtkcs-details {
-        @extend .dark-gray;
         @extend .paragraph4;
+        box-sizing: border-box;
         font-weight: 400;
-        width: 455px;
+        margin: 0;
+        padding: 10% 0 0 0;
       }
     }
   }

@@ -39,12 +39,12 @@ class RolesSerializer(ModelSerializer):
 class ExecutiveSerializer(ModelSerializer):
     class Meta:
         model = Executive
-        fields = ('id', 'executive_role_name', 'executive_role_description')
+        fields = ('id', 'name', 'description')
 
 class WebsiteManagementSerializer(ModelSerializer):
     class Meta:
         model = WebsiteManagement
-        fields = ('id', 'website_management_role_name', 'website_management_role_description')
+        fields = ('id', 'name', 'description')
 
 class ProgramsSerializer(ModelSerializer):
     class Meta:

@@ -1,0 +1,56 @@
+// ExecutiveAccordion.scss
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.accordion-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .accordion-item {
+    @extend .dark-gray-container;
+    padding: 2%;
+    margin: 0;
+    margin-bottom: 1%;
+
+    &.active {
+      .accordion-content {
+        display: block;
+      }
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-bottom: 1%;
+      border-bottom: 1px solid white;
+
+      .role-name {
+        @extend .paragraph3;
+        color: white;
+        text-transform: capitalize;
+      }
+
+      .arrow-icon {
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+    }
+
+    .accordion-content {
+      @extend .paragraph3;
+      color: white;
+      padding-top: 1%;
+      display: none;
+
+      div {
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,54 +1,49 @@
+// ProgramContainer.scss
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
 
 .program-item {
+//   background: lightblue;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+  .img {
+    // width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .program-details {
+    @extend .dark-gray-container;
+    box-sizing: border-box;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    display: inline-flex;
-}
-
-.program-item img {
-    width: 304px;
-    height: 300px;
-}
-
-.program-overlay {
-    width: 304px;
-    height: 160px;
-    position: relative;
-}
-
-.program-overlay > div {
-    @extend .dark-gray;
-    width: 304px;
-    height: 160px;
-    position: absolute;
-}
-
-.program-details {
-    width: 272px;
-    height: 89.60px;
-    left: 16px;
-    top: 25.60px;
-    position: absolute;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    display: inline-flex;
+    display: flex;
+    padding: 10%;
+    margin: 0;
+    height: 50%;
+  
+    .program-name {
+      @extend .paragraph3;
+      text-align: center;
+      color: white;
+      font-family: Azeret Mono;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .program-description {
+      @extend .paragraph4;
+      text-align: center;
+      color: white;
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
-
-.program-name {
-    @extend .paragraph3;
-    text-align: center;
-    color: white;
-    font-family: Azeret Mono;
-}
-
-.program-description {
-    @extend .paragraph4;
-    text-align: center;
-    color: white;
-}
-

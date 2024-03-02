@@ -4,10 +4,10 @@ import { AboutUsSection2 } from "../components/AboutUsSections/AboutUsSection2/A
 import { AboutUsSection3 } from "../components/AboutUsSections/AboutUsSection3/AboutUsSection3";
 
 function AboutUs() {
-  const [AboutUsData, setAboutUs] = useState([]);
-  const [ProgressData, setProgress] = useState([]);
-  const [SponsorInfoData, setSponsorInfo] = useState([]);
-  const [SponsorData, setSponsor] = useState([]);
+  const [aboutUsData, setAboutUs] = useState([]);
+  const [progressData, setProgress] = useState([]);
+  const [sponsorInfoData, setSponsorInfo] = useState([]);
+  const [sponsorData, setSponsor] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -46,11 +46,11 @@ function AboutUs() {
           );
         }
         const sponsorInfoResult = await sponsorInfoResponse.json();
-        setSponsorInfo(sponsorInfoResult);
+        setSponsorInfo(sponsorInfoResult[0]);
 
         // Fetch sponsor data
         const sponsorResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}sponsor-section`
+          `${import.meta.env.VITE_API_URL}sponsor-section/`
         );
         if (!sponsorResponse.ok) {
           throw new Error(
@@ -70,18 +70,18 @@ function AboutUs() {
   return (
     <>
       <AboutUsSection1
-        title={AboutUsData.title}
-        subtitle={AboutUsData.subtitle}
-        description={AboutUsData.description}
-        img={AboutUsData.image}
+        title={aboutUsData.title}
+        subtitle={aboutUsData.subtitle}
+        description={aboutUsData.about_us_description}
+        img={aboutUsData.image}
       />
 
-      <AboutUsSection2 data={ProgressData} />
+      <AboutUsSection2 data={progressData} />
 
       <AboutUsSection3
-        title={SponsorInfoData.title}
-        subtitle={SponsorInfoData.subtitle}
-        sponsorData={SponsorData}
+        title={sponsorInfoData.title}
+        subtitle={sponsorInfoData.subtitle}
+        sponsorData={sponsorData}
       />
     </>
   );

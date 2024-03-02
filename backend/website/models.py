@@ -1,13 +1,14 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 # Home
 class Home(models.Model):
     title = RichTextField()
     subtitle = RichTextField()
     title_image = models.ImageField(upload_to="MEDIA/home/title_image/")
     logo_image = models.ImageField(null=True)
-    footer = RichTextField()
+    footer = RichTextField(default="")
 
     def __str__(self):
         return f"Home"
@@ -47,11 +48,12 @@ class ProgressSection(models.Model):
 class SponsorInformationSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=100)
+    subtitle = RichTextField()
 
     def __str__(self):
         return f"Sponsor Section"
-                                
+
+
 class SponsorSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
     sponsor_logo = models.ImageField(upload_to="about_us/sponsor_section_logos/")
@@ -63,7 +65,7 @@ class SponsorSection(models.Model):
 # Roles
 class Roles(models.Model):
     title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
+    subtitle = RichTextField()
     roles_description = models.TextField()
     executive_title = models.CharField(max_length=200)  # Set a default value
     executive_description = models.TextField()
@@ -76,20 +78,20 @@ class Roles(models.Model):
 
 class Executive(models.Model):
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
-    executive_role_name = models.CharField(max_length=100)
-    executive_role_description = models.TextField()
+    name = models.CharField(max_length=100, default='')
+    description = RichTextField(default='')
 
     def __str__(self):
-        return f"Executive Team Role - {self.executive_role_name}"
+        return f"Executive Team Role - {self.name}"
 
 
 class WebsiteManagement(models.Model):
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
-    website_management_role_name = models.CharField(max_length=100)
-    website_management_role_description = models.TextField()
+    name = models.CharField(max_length=100, default='')
+    description = RichTextField(default='')
 
     def __str__(self):
-        return f"Website Management Team Role - {self.website_management_role_name}"
+        return f"Website Management Team Role - {self.name}"
 
 
 # Programs

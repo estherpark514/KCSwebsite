@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeButton } from "../../HomeButton/HomeButton";
+import { Button } from "../../Button/Button";
 import "./HomeSection2.scss";
 
 export const HomeSection2 = ({ title, subtitle, img }) => {
@@ -20,7 +20,7 @@ export const HomeSection2 = ({ title, subtitle, img }) => {
             className="home-section2-subtitle"
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
-          <HomeButton name="Our Mission" />
+          <Button name="Our Mission" />
         </div>
       </div>
     </div>

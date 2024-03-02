@@ -59,6 +59,7 @@ class ProgressSectionViewSet(ModelViewSet):
 class SponsorInformationSectionViewSet(ModelViewSet):
     queryset = SponsorInformationSection.objects.all()
     serializer_class = SponsorInformationSectionSerializer
+
 class SponsorSectionViewSet(ModelViewSet):
     queryset = SponsorSection.objects.all()
     serializer_class = SponsorSectionSerializer

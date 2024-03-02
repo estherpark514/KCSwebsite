@@ -4,8 +4,9 @@ import "./AboutUsSection2.scss";
 export const AboutUsSection2 = ({ data }) => {
   const ProgressItem = ({ name, stat, moreLink }) => (
     <div className="progress-item">
-      <div className="progress-circle"></div>
-      <div className="progress-number">{stat}</div>
+      <div className="progress-circle">
+        {stat}
+      </div>
       <div className="progress-label">{name}</div>
       {moreLink && <div className="more-link">{moreLink}</div>}
     </div>

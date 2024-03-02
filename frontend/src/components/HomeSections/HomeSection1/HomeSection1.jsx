@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeButton } from "../../HomeButton/HomeButton";
+import { Button } from "../../Button/Button";
 import "./HomeSection1.scss";
 
 export const HomeSection1 = ({ title, subtitle, img }) => {
@@ -15,7 +15,7 @@ export const HomeSection1 = ({ title, subtitle, img }) => {
             className="home-section1-subtitle"
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
-          <HomeButton name="Get Involved" />
+          <Button name="Get Involved" />
         </div>
       </div>
       <img className="home-section1-picture" alt="Section picture" src={img} />

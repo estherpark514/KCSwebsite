@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
-import { HomeButton } from "../HomeButton/HomeButton";
+import { Button } from "../Button/Button";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
@@ -39,7 +39,10 @@ const Header = () => {
         <Link to="/programs">PROGRAMS</Link>
         <Link to="/resources">RESOURCES</Link>
 
-        <HomeButton onClick={() => navigate("/joinus")} name="JOIN US" />
+        <Button
+          name="JOIN US"
+          link="/joinus"
+        />
       </div>
     </div>
   );

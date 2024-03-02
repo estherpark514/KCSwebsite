@@ -1,13 +1,13 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/fonts.scss';
-@import "../../../components/HomeButton/HomeButton.scss";
+@import "../../../components/Button/Button.scss";
 
 .home-section2 {
   display: flex;
   position: relative;
   justify-content: space-between;
   padding: 0;
-  margin: 0 9.5%;
+  margin: 0 11%;
   margin-top: 6%;
 
   .home-section2-picture {

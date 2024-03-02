@@ -2,39 +2,32 @@
 @import '../../styles/fonts.scss';
 
 .resource-link-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+  // background: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 25%;
+  margin: 0;
+  width: 100%;
+
   .resource-link {
+    // background: lightblue;
+    @extend .divider;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .link-title {
-    @extend .dark-gray;
-    @extend .paragraph2;
-    font-family: 'Azeret Mono';
-    text-transform: uppercase;
-  }
-  
-  .link-button {
-    @extend .dark-gray;
-    @extend .paragraph4;
-    padding: 10px;
-    color: white;
-    font-family: 'Azeret Mono';
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .divider {
-    @extend .dark-gray;
-    height: 2px;
+    justify-content: space-between;
     width: 100%;
+    padding: 5% 1%;
+    margin: 0;
+    
+
+    .link-title {
+      @extend .dark-gray;
+      @extend .paragraph2;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+    }
   }
-  
+}

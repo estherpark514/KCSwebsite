@@ -1,0 +1,79 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.student-container {
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    padding: 0 11%;
+    margin: 0;
+    // background: lightblue;
+
+    .header {
+        @extend .dark-gray;
+        @extend .heading2;
+        padding: 0;
+        margin: 3% 0;
+    }
+  
+    .content {
+        // background: lightblue;
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        padding: 0;
+        margin: 0;
+  
+      .section {
+        @extend .lighter-gray;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 5%;
+  
+        .title {
+            @extend .dark-gray;
+            @extend .heading4;
+            box-sizing: border-box;
+            padding: 0 0 2% 0;
+            margin: 0;
+        }
+
+        .description {
+            @extend .dark-border-1;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-sizing: border-box;
+            display: flex;
+            padding: 2%;
+            margin: 2% 0 0 0;
+            
+            .text-header {
+                @extend .dark-gray;
+                @extend .paragraph3;
+                box-sizing: border-box;
+                padding: 0 0 1% 0;
+                margin: 0;
+            }
+            .text {
+                @extend .dark-gray;
+                @extend .paragraph4;
+                padding: 0 0 1% 0;
+                margin: 0;
+            }
+        }
+      }
+    }
+  }
+  
