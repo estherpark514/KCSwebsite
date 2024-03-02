@@ -3,11 +3,13 @@ import "./JoinUsSection1.scss";
 import { Button } from "../../Button/Button";
 
 export const JoinUsSection1 = ({ joinUsLink, membershipData, openRoles }) => {
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
-      <div className="title">
-        Join Us
-      </div>
+      <div className="title">Join Us</div>
       <div className="student-container">
         <div className="header">students</div>
         <div className="content">
@@ -43,7 +45,11 @@ export const JoinUsSection1 = ({ joinUsLink, membershipData, openRoles }) => {
             <div className="description">
               <div className="text-header">Open roles:</div>
               <div className="text">{openRoles.open_roles}</div>
-              <Button name="Job Description" link="" />
+              <Button
+                name="Job Description"
+                link="/roles"
+                onClick={handleLinkClick}
+              />
             </div>
           </div>
         </div>

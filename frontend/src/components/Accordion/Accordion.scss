@@ -29,6 +29,7 @@
 
       .role-name {
         @extend .paragraph3;
+        font-weight: 400;
         color: white;
         text-transform: capitalize;
       }
@@ -41,7 +42,8 @@
     }
 
     .accordion-content {
-      @extend .paragraph3;
+      @extend .paragraph4;
+      font-weight: 100;
       color: white;
       padding-top: 1%;
       display: none;

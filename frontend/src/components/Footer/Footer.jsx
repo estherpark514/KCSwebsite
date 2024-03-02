@@ -26,7 +26,6 @@ const Footer = () => {
   }, []);
 
   const handleLinkClick = () => {
-    // Scroll to the top of the page when a link is clicked
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
