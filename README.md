@@ -84,7 +84,6 @@ To set up and run the project locally, follow these steps:
    # Run frontend development server
    npm run dev
    ```
-   ```
 
 Now you can access the website locally at [http://localhost:8000](http://localhost:8000).
 
