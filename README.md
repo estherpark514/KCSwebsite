@@ -35,12 +35,14 @@ We began our journey by creating a comprehensive prototype of the website using 
 Our website is built on a robust tech stack:
 
 - **Backend Framework:** Django Rest Framework
+
+  > We selected Django Rest Framework for its ability to facilitate frequent and easy website updates through the admin interface.
+
 - **Frontend Framework:** React.js
+
+  > We chose Vite to enhance our React development process, benefiting from its swift build times and efficient workflow. Additionally, we embraced SCSS over traditional CSS for its improved readability and modular structure, enhancing the overall styling of our website.
+
 - **Bundling Tool:** Vite
-
-We opted for Vite to streamline our React development process due to its fast build times and efficient development workflow.
-
-In addition, we chose to implement SCSS instead of traditional CSS, leveraging its enhanced readability and modular structure to elevate the styling of our website.
 
 ## Getting Started
 
@@ -53,7 +55,17 @@ To set up and run the project locally, follow these steps:
    cd your-repository
    ```
 
-2. Install dependencies for both the backend and frontend.
+2. Access the project's environment and activate it.
+
+   ```bash
+   # Navigate to the project directory
+   cd your-repository
+
+   # Access the virtual environment
+   source bin/activate
+   ```
+
+3. Install dependencies for both the backend and frontend.
 
    ```bash
    # Install backend dependencies
@@ -63,7 +75,7 @@ To set up and run the project locally, follow these steps:
    npm install
    ```
 
-3. Run the development server.
+4. Run the development server.
 
    ```bash
    # Run backend server
@@ -71,6 +83,7 @@ To set up and run the project locally, follow these steps:
 
    # Run frontend development server
    npm run dev
+   ```
    ```
 
 Now you can access the website locally at [http://localhost:8000](http://localhost:8000).
