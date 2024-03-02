@@ -36,7 +36,7 @@ Our website is built on a robust tech stack:
 
 - **Backend Framework:** Django Rest Framework
 
-  > We selected Django Rest Framework for its ability to facilitate frequent and easy website updates through the admin interface.
+  > We chose Django Rest Framework for its ability to facilitate frequent and easy website updates through the admin interface.
 
 - **Frontend Framework:** React.js
 
