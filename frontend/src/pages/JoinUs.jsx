@@ -66,11 +66,12 @@ function JoinUs() {
   return (
     <>
       <JoinUsSection1
+        id="join-us-section1"
         joinUsLink={joinUsData.membership_application_form_link}
         membershipData={membershipData}
         openRoles={openRolesData}
       />
-      <JoinUsSection2 sponsorsData={sponsorsData} />
+      <JoinUsSection2 id="join-us-section2" sponsorsData={sponsorsData} />
     </>
   );
 }

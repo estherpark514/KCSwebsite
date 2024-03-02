@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -23,6 +24,12 @@ const Footer = () => {
 
     fetchFooter();
   }, []);
+
+  const handleLinkClick = () => {
+    // Scroll to the top of the page when a link is clicked
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="footer">
       <div
@@ -32,30 +39,52 @@ const Footer = () => {
       <div className="footer-link-container">
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">General</div>
-          <div className="footer-wrapper">About Us</div>
-          <div className="footer-wrapper">Programs</div>
-          <div className="footer-wrapper">Roles</div>
+          <Link
+            className="footer-wrapper"
+            to="/about-us"
+            onClick={handleLinkClick}
+          >
+            About Us
+          </Link>
+          <Link
+            className="footer-wrapper"
+            to="/programs"
+            onClick={handleLinkClick}
+          >
+            Programs
+          </Link>
+          <Link
+            className="footer-wrapper"
+            to="/roles"
+            onClick={handleLinkClick}
+          >
+            Roles
+          </Link>
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Get Involved</div>
-          <div className="footer-wrapper">Students</div>
-          <div className="footer-wrapper">Sponsors</div>
-          <div className="footer-wrapper">Contact Us</div>
+          <Link
+            className="footer-wrapper"
+            to="/joinus#join-us-section1"
+          >
+            Students
+          </Link>
+          <Link
+            className="footer-wrapper"
+            to="/joinus#join-us-section2"
+          >
+            Sponsors
+          </Link>
+          <a className="footer-wrapper">Contact Us</a>
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Social Media</div>
-          <div
-            className="footer-wrapper"
-            href="https://www.instagram.com/gt_kcs?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="
-          >
+          <a className="footer-wrapper" href={footerData.instagram_link}>
             Instagram
-          </div>
-          <div
-            className="footer-wrapper"
-            href="https://github.com/estherpark514/KCSwebsite"
-          >
+          </a>
+          <a className="footer-wrapper" href={footerData.github_link}>
             Github
-          </div>
+          </a>
         </div>
       </div>
     </div>

@@ -62,6 +62,7 @@
         padding: 10px 0;
         margin: 0;
       }
+
       .footer-wrapper {
         @extend .dark-gray;
         @extend .menu;
@@ -72,7 +73,13 @@
         padding: 10px 0;
         margin: 0;
         cursor: pointer;
+        text-decoration: none;
       }
+
+      .footer-wrapper:visited {
+        text-decoration: none;
+      }
+
       .footer-wrapper:hover {
         text-decoration: underline;
         font-weight: 500;

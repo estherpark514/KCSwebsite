@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <div className="header">
       <Link to="/">
-        <img className="logo" alt="Logo" src={logo.logo_image} />
+        <img className="logo" alt="Logo" src={logo.logo_image} link="/"/>
       </Link>
       <div className="navbar">
         <Link to="/">HOME</Link>
