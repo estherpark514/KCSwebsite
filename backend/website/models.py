@@ -9,6 +9,8 @@ class Home(models.Model):
     title_image = models.ImageField(upload_to="MEDIA/home/title_image/")
     logo_image = models.ImageField(null=True)
     footer = RichTextField(default="")
+    github_link =  models.CharField(max_length=200, null=True)
+    instagram_link =  models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return f"Home"
@@ -78,8 +80,8 @@ class Roles(models.Model):
 
 class Executive(models.Model):
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, default='')
-    description = RichTextField(default='')
+    name = models.CharField(max_length=100, default="")
+    description = RichTextField(default="")
 
     def __str__(self):
         return f"Executive Team Role - {self.name}"
@@ -87,8 +89,8 @@ class Executive(models.Model):
 
 class WebsiteManagement(models.Model):
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, default='')
-    description = RichTextField(default='')
+    name = models.CharField(max_length=100, default="")
+    description = RichTextField(default="")
 
     def __str__(self):
         return f"Website Management Team Role - {self.name}"
