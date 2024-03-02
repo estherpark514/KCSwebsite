@@ -40,7 +40,7 @@ Our website is built on a robust tech stack:
 
 - **Frontend Framework:** React.js
 
-  > We chose Vite to enhance our React development process, benefiting from its swift build times and efficient workflow. Additionally, we embraced SCSS over traditional CSS for its improved readability and modular structure, enhancing the overall styling of our website.
+  > We chose React.js due to its flexibility, efficient state management, and extensive ecosystem, enabling the creation of a modern, interactive platform with a responsive user experience.
 
 - **Bundling Tool:** Vite
 
