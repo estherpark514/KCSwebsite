@@ -56,7 +56,7 @@ class SponsorInformationSection(models.Model):
 
 class SponsorSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
-    sponsor_logo = models.ImageField(upload_to="about_us/sponsor_section_logos/")
+    sponsor_logo = models.ImageField(upload_to="MEDIA/about_us/sponsor_section_logos/")
 
     def __str__(self):
         return f"Sponsors - {self.id}"
@@ -107,7 +107,7 @@ class ProgramsSections(models.Model):
     programs = models.ForeignKey(Programs, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     frequency = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="programs/images/")
+    image = models.ImageField(upload_to="MEDIA/programs/images/")
 
     def __str__(self):
         return f"Programs Section - {self.id}"

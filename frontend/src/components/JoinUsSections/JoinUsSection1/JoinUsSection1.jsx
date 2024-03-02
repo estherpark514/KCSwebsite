@@ -3,7 +3,6 @@ import "./JoinUsSection1.scss";
 import { Button } from "../../Button/Button";
 
 export const JoinUsSection1 = ({ joinUsLink, membershipData, openRoles }) => {
-    console.log(openRoles);
   return (
     <>
       <div className="student-container">
