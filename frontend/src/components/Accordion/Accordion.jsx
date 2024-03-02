@@ -39,10 +39,7 @@ export const Accordion = ({ data }) => {
           </div>
           <div className="accordion-content">
             {openIndices.includes(index) && (
-              <div
-                dangerouslySetInnerHTML={{ __html: role.description }}
-                style={{ color: "white" }}
-              />
+              <div dangerouslySetInnerHTML={{ __html: role.description }} />
             )}
           </div>
         </div>
