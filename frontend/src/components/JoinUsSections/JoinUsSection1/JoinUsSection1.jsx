@@ -5,6 +5,9 @@ import { Button } from "../../Button/Button";
 export const JoinUsSection1 = ({ joinUsLink, membershipData, openRoles }) => {
   return (
     <>
+      <div className="title">
+        Join Us
+      </div>
       <div className="student-container">
         <div className="header">students</div>
         <div className="content">

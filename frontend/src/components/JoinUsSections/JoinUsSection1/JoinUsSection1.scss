@@ -1,6 +1,12 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/fonts.scss';
 
+.title {
+    @extend .heading2;
+    @extend .dark-gray;
+    margin: 3% 0;
+    text-align: center;
+}
 .student-container {
     box-sizing: border-box;
     width: 100%;
@@ -16,7 +22,7 @@
         @extend .dark-gray;
         @extend .heading2;
         padding: 0;
-        margin: 3% 0;
+        margin: 0;
     }
   
     .content {
