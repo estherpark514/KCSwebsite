@@ -46,9 +46,10 @@
           @extend .subheading1;
           @extend .dark-gray;
           position: relative;
+          box-sizing: border-box;
           line-height: 70%;
           margin: 0;
-          padding: 0;
+          padding: 0 0 3% 0;
       }
     }
   }
