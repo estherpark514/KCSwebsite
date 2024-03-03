@@ -6,8 +6,8 @@ from ckeditor.fields import RichTextField
 class Home(models.Model):
     title = RichTextField()
     subtitle = RichTextField()
-    title_image = models.ImageField(upload_to="MEDIA/home/title_image/")
-    logo_image = models.ImageField(null=True)
+    title_image = models.ImageField(upload_to="home/title_image/")
+    logo_image = models.ImageField(null=True, upload_to="")
     footer = RichTextField(default="")
     github_link =  models.CharField(max_length=200, null=True)
     instagram_link =  models.CharField(max_length=200, null=True)
@@ -21,7 +21,7 @@ class MissionSection(models.Model):
     home = models.ForeignKey(Home, on_delete=models.CASCADE)
     mission_heading = RichTextField()
     mission_subheading = RichTextField()
-    mission_image = models.ImageField(upload_to="MEDIA/home/mission_image/")
+    mission_image = models.ImageField(upload_to="home/mission_image/")
 
     def __str__(self):
         return self.mission_heading
@@ -32,7 +32,7 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     about_us_description = models.TextField()
-    image = models.ImageField(upload_to="MEDIA/about_us/title_section_images/")
+    image = models.ImageField(upload_to="about_us/title_section_images/")
 
     def __str__(self):
         return f"About Us"
@@ -58,7 +58,7 @@ class SponsorInformationSection(models.Model):
 
 class SponsorSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
-    sponsor_logo = models.ImageField(upload_to="MEDIA/about_us/sponsor_section_logos/")
+    sponsor_logo = models.ImageField(upload_to="about_us/sponsor_section_logos/")
 
     def __str__(self):
         return f"Sponsors - {self.id}"
@@ -109,7 +109,7 @@ class ProgramsSections(models.Model):
     programs = models.ForeignKey(Programs, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     frequency = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="MEDIA/programs/images/")
+    image = models.ImageField(upload_to="programs/images/")
 
     def __str__(self):
         return f"Programs Section - {self.id}"
