@@ -30,6 +30,7 @@
   
     .program-name {
       @extend .paragraph3;
+      font-weight: 600;
       text-align: center;
       color: white;
       font-family: Azeret Mono;
@@ -39,9 +40,10 @@
     
     .program-description {
       @extend .paragraph4;
+      box-sizing: border-box;
       text-align: center;
       color: white;
-      padding: 0;
+      padding: 2% 0 0 0;
       margin: 0;
     }
   }
