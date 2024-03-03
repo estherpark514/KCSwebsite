@@ -69,7 +69,7 @@ To set up and run the project locally, follow these steps:
 
    ```bash
    # Install backend dependencies
-   pip install -r requirements.txt
+   pip install django djangorestframework
 
    # Install frontend dependencies
    npm install
