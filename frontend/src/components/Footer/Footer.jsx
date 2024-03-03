@@ -62,26 +62,30 @@ const Footer = () => {
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Get Involved</div>
-          <Link
-            className="footer-wrapper"
-            to="/joinus#join-us-section1"
-          >
+          <Link className="footer-wrapper" to="/joinus#join-us-section1">
             Students
           </Link>
-          <Link
-            className="footer-wrapper"
-            to="/joinus#join-us-section2"
-          >
+          <Link className="footer-wrapper" to="/joinus#join-us-section2">
             Sponsors
           </Link>
           <a className="footer-wrapper">Contact Us</a>
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Social Media</div>
-          <a className="footer-wrapper" href={footerData.instagram_link}>
+          <a
+            className="footer-wrapper"
+            href={footerData.instagram_link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Instagram
           </a>
-          <a className="footer-wrapper" href={footerData.github_link}>
+          <a
+            className="footer-wrapper"
+            href={footerData.github_link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Github
           </a>
         </div>
