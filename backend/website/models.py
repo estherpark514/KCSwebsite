@@ -7,10 +7,10 @@ class Home(models.Model):
     title = RichTextField()
     subtitle = RichTextField()
     title_image = models.ImageField(upload_to="home/title_image/")
-    logo_image = models.ImageField(null=True, upload_to="")
+    logo_image = models.ImageField(upload_to="logo")
     footer = RichTextField(default="")
-    github_link =  models.CharField(max_length=200, null=True)
-    instagram_link =  models.CharField(max_length=200, null=True)
+    github_link = models.CharField(max_length=200)
+    instagram_link = models.CharField(max_length=200)
 
     def __str__(self):
         return f"Home"
