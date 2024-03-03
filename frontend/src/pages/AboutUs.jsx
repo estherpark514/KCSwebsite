@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AboutUsSection1 } from "../components/AboutUsSections/AboutUsSection1/AboutUsSection1";
 import { AboutUsSection2 } from "../components/AboutUsSections/AboutUsSection2/AboutUsSection2";
 import { AboutUsSection3 } from "../components/AboutUsSections/AboutUsSection3/AboutUsSection3";
+import { AboutUsSection4 } from "../components/AboutUsSections/AboutUsSection4/AboutUsSection4";
 
 function AboutUs() {
   const [aboutUsData, setAboutUs] = useState([]);
@@ -78,7 +79,13 @@ function AboutUs() {
 
       <AboutUsSection2 data={progressData} />
 
-      <AboutUsSection3
+      {/* <AboutUsSection3
+        title={sponsorInfoData.title}
+        subtitle={sponsorInfoData.subtitle}
+        sponsorData={sponsorData}
+      /> */}
+
+      <AboutUsSection4
         title={sponsorInfoData.title}
         subtitle={sponsorInfoData.subtitle}
         sponsorData={sponsorData}
