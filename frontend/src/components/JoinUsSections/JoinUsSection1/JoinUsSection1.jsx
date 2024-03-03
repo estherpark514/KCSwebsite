@@ -44,7 +44,10 @@ export const JoinUsSection1 = ({ joinUsLink, membershipData, openRoles }) => {
             </div>
             <div className="description">
               <div className="text-header">Open roles:</div>
-              <div className="text">{openRoles.open_roles}</div>
+              <div className="text-subheader">Executive team:</div>
+              <div className="text">{openRoles.executive_roles}</div>
+              <div className="text-subheader">Website management team:</div>
+              <div className="text">{openRoles.web_management_roles}</div>
               <Button
                 name="Job Description"
                 link="/roles"

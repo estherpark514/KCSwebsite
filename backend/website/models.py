@@ -7,10 +7,10 @@ class Home(models.Model):
     title = RichTextField()
     subtitle = RichTextField()
     title_image = models.ImageField(upload_to="home/title_image/")
-    logo_image = models.ImageField(upload_to="logo")
+    logo_image = models.ImageField(upload_to="logo", null=True)
     footer = RichTextField(default="")
-    github_link = models.CharField(max_length=200)
-    instagram_link = models.CharField(max_length=200)
+    github_link = models.CharField(max_length=200, null=True)
+    instagram_link = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return f"Home"
@@ -143,7 +143,8 @@ class MembershipBenefits(models.Model):
 class OpenRoles(models.Model):
     join_us = models.ForeignKey(JoinUs, on_delete=models.CASCADE)
     application_form_link = models.CharField(max_length=500)
-    open_roles = models.TextField()
+    executive_roles = models.TextField(null=True)
+    web_management_roles = models.TextField(null=True)
 
     def __str__(self):
         return f"Open Roles - {self.id}"

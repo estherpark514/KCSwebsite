@@ -74,7 +74,7 @@ class MembershipBenefitsSerializer(ModelSerializer):
 class OpenRolesSerializer(ModelSerializer):
     class Meta:
         model = OpenRoles
-        fields = ('id', 'application_form_link', 'open_roles')
+        fields = ('id', 'application_form_link', 'executive_roles', 'web_management_roles')
 
 class SponsorsSerializer(ModelSerializer):
     class Meta:
