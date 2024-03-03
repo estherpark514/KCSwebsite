@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/fonts.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .header {
   box-sizing: border-box;
@@ -10,7 +10,7 @@
   position: relative;
   width: 100%;
   margin: 0;
-  padding: 2% 11%;
+  padding: 2% 15%;
 
   .logo {
     height: 76px;

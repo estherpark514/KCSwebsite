@@ -11,7 +11,7 @@
   .accordion-item {
     @extend .dark-gray-container;
     // @extend .dark-border-3;
-    padding: 2%;
+    padding: 1% 2%;
     margin: 0;
     margin-bottom: 1%;
 
@@ -36,9 +36,12 @@
       }
 
       .arrow-icon {
-        width: 30px;
-        height: 30px;
+        box-sizing: border-box;
+        width: 2%;
+        height: auto;
         position: relative;
+        padding: 0;
+        margin: 0;
       }
     }
 
@@ -46,7 +49,6 @@
       @extend .paragraph4;
       font-weight: 100;
       color: white;
-      padding-top: 1%;
       display: none;
 
       div {
