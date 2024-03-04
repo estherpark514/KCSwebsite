@@ -55,27 +55,17 @@ To set up and run the project locally, follow these steps:
    cd your-repository
    ```
 
-2. Access the project's environment and activate it.
-
-   ```bash
-   # Navigate to the project directory
-   cd your-repository
-
-   # Access the virtual environment
-   source bin/activate
-   ```
-
-3. Install dependencies for both the backend and frontend.
+2. Install dependencies for both the backend and frontend.
 
    ```bash
    # Install backend dependencies
-   pip install django djangorestframework
+   pip install -r requirements.txt
 
    # Install frontend dependencies
    npm install
    ```
 
-4. Run the development server.
+3. Run the development server.
 
    ```bash
    # Run backend server
@@ -85,7 +75,8 @@ To set up and run the project locally, follow these steps:
    npm run dev
    ```
 
-Now you can access the website locally at [http://localhost:8000](http://localhost:8000).
+Now you can access the website locally!
+
 
 ## Contributions
 
