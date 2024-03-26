@@ -1,21 +1,12 @@
 from django.contrib import admin
 # from ckeditor.widgets import CKEditorWidget
 # from django import forms
-from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
+from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Partners, StudentOrganization, KoreanCompanies, USCompanies, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
 
 #Home
 class MissionSectionInline(admin.StackedInline):
     model = MissionSection
     extra = 1
-
-# class HomeForm(forms.ModelForm):
-#     class Meta:
-#         model = Home
-#         fields = '__all__'
-#         widgets = {
-#             'title': CKEditorWidget(),
-#             'subtitle': CKEditorWidget(),
-#         }
 
 class HomeAdmin(admin.ModelAdmin):
     # form = HomeForm
@@ -40,6 +31,24 @@ class AboutUsAdmin(admin.ModelAdmin):
     inlines = [ProgressSectionInline, SponsorInformationSectionInline, SponsorSectionInline]
 
 admin.site.register(AboutUs, AboutUsAdmin)
+
+class StudentOrganizationsInline(admin.StackedInline):
+    model = StudentOrganization
+    extra = 1
+
+
+class KoreanCompaniesInline(admin.StackedInline):
+    model = KoreanCompanies
+    extra = 1
+
+class USCompaniesInline(admin.StackedInline):
+    model = USCompanies
+    extra = 1
+
+class PartnersAdmin(admin.ModelAdmin):
+    inlines = [StudentOrganizationsInline, KoreanCompaniesInline, USCompaniesInline]
+
+admin.site.register(Partners, PartnersAdmin)
 
 #Roles
 class ExecutiveInline(admin.StackedInline):

@@ -6,6 +6,9 @@ from .views import (
     ProgressSectionViewSet,
     SponsorInformationSectionViewSet,
     SponsorSectionViewSet,
+    StudentOrganizationViewset,
+    KoreanCompaniesViewset,
+    USCompaniesViewset,
     RolesViewSet,
     ExecutiveViewSet,
     WebsiteManagementViewSet,
@@ -35,6 +38,15 @@ sponsor_section_router.register(r"sponsor-section", SponsorSectionViewSet)
 
 sponsor_information_section_router = DefaultRouter()
 sponsor_information_section_router.register(r"sponsor-information-section", SponsorInformationSectionViewSet)
+
+student_organization_router = DefaultRouter()
+student_organization_router.register(r"student-org", StudentOrganizationViewset)
+
+korean_companies_router = DefaultRouter()
+korean_companies_router.register(r"korean-companies", KoreanCompaniesViewset)
+
+us_companies_router = DefaultRouter()
+us_companies_router.register(r"us-companies", USCompaniesViewset)
 
 roles_router = DefaultRouter()
 roles_router.register(r"roles", RolesViewSet)

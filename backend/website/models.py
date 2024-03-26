@@ -55,7 +55,6 @@ class SponsorInformationSection(models.Model):
     def __str__(self):
         return f"Sponsor Section"
 
-
 class SponsorSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
     sponsor_logo = models.ImageField(upload_to="about_us/sponsor_section_logos/")
@@ -63,6 +62,33 @@ class SponsorSection(models.Model):
     def __str__(self):
         return f"Sponsors - {self.id}"
 
+class Partners(models.Model):
+    def __str__(self):
+        return f"Partners"
+    
+class StudentOrganization(models.Model):
+    partners = models.ForeignKey(Partners, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to="partners/logos/")
+
+    def __str__(self):
+        return f"Student Organization - {self.id}"
+    
+class KoreanCompanies(models.Model):
+    partners = models.ForeignKey(Partners, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to="partners/logos/")
+
+    def __str__(self):
+        return f"Korean Company - {self.id}"
+    
+class USCompanies(models.Model):
+    partners = models.ForeignKey(Partners, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to="partners/logos/")
+
+    def __str__(self):
+        return f"US Company - {self.id}"
 
 # Roles
 class Roles(models.Model):

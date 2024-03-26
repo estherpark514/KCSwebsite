@@ -6,6 +6,9 @@ from website.api.urls import (
     progress_section_router,
     sponsor_information_section_router,
     sponsor_section_router,
+    student_organization_router,
+    korean_companies_router,
+    us_companies_router,
     roles_router,
     executive_router,
     website_management_router,
@@ -38,6 +41,12 @@ router.registry.extend(sponsor_information_section_router.registry)
 
 # Sponsors Section
 router.registry.extend(sponsor_section_router.registry)
+
+router.registry.extend(student_organization_router.registry)
+
+router.registry.extend(korean_companies_router.registry)
+
+router.registry.extend(us_companies_router.registry)
 
 # Roles
 router.registry.extend(roles_router.registry)

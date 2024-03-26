@@ -6,6 +6,7 @@ from ..models import (
     ProgressSection,
     SponsorInformationSection,
     SponsorSection,
+    Partners, StudentOrganization, KoreanCompanies, USCompanies,
     Roles,
     Executive,
     WebsiteManagement,
@@ -25,6 +26,7 @@ from .serializers import (
     ProgressSectionSerializer,
     SponsorInformationSectionSerializer,
     SponsorSectionSerializer,
+    StudentOrganizationSerializer, KoreanCompaniesSerializer, USCompaniesSerializer,
     RolesSerializer,
     ExecutiveSerializer,
     WebsiteManagementSerializer,
@@ -64,6 +66,17 @@ class SponsorSectionViewSet(ModelViewSet):
     queryset = SponsorSection.objects.all()
     serializer_class = SponsorSectionSerializer
 
+class StudentOrganizationViewset(ModelViewSet):
+    queryset = StudentOrganization.objects.all()
+    serializer_class = StudentOrganizationSerializer
+
+class KoreanCompaniesViewset(ModelViewSet):
+    queryset = KoreanCompanies.objects.all()
+    serializer_class = KoreanCompaniesSerializer
+
+class USCompaniesViewset(ModelViewSet):
+    queryset = USCompanies.objects.all()
+    serializer_class = USCompaniesSerializer
 
 class RolesViewSet(ModelViewSet):
     queryset = Roles.objects.all()
