@@ -1,0 +1,43 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.program-title-container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+    padding: 0;
+    margin: 3% 0;
+
+    .program-title {
+        @extend .dark-gray;
+        @extend .heading2;
+        text-align: center;
+    }
+    
+    .program-subtitle {
+        @extend .dark-gray;
+        @extend .subheading1;
+        text-align: center;
+    }
+}
+
+.programs-content {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1% 0;
+    padding: 0 15%;
+  
+    .program-row {
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  

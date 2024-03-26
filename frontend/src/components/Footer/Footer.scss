@@ -2,11 +2,9 @@
 @import "../../styles/fonts.scss";
 
 .footer {
+  @extend .dark-gray-container;
   box-sizing: border-box;
-  // align-items: flex-start;
-  background-color: #d9d9d9;
   display: flex;
-  // gap: 10%;
   position: relative;
   align-items: center;
   justify-content: space-between;
@@ -15,11 +13,25 @@
   margin-top: 2%;
   padding: 3% 15%;
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    left: -30%;
+    width: 30%;
+    height: 20%;
+    background: transparent;
+    filter: blur(100px);
+    box-shadow: 0 0 40px 40px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    pointer-events: none;
+  }
+
   .footer-phrase {
-    @extend .dark-gray;
     @extend .paragraph1;
+    color: white;
     text-transform: capitalize;
-    font-weight: 300;
+    font-weight: 100;
     font-style: italic;
     line-height: 80%;
     justify-content: center;
@@ -53,23 +65,23 @@
       // height: 100%;
 
       .footer-wrapper-bolded {
-        @extend .dark-gray;
         @extend .menu;
+        color: white;
         box-sizing: border-box;
         text-transform: capitalize;
-        font-weight: 700;
+        font-weight: 400;
         position: relative;
         padding: 10px 0;
         margin: 0;
       }
 
       .footer-wrapper {
-        @extend .dark-gray;
         @extend .menu;
+        color: white;
         box-sizing: border-box;
         text-transform: capitalize;
         position: relative;
-        font-weight: 300;
+        font-weight: 100;
         padding: 10px 0;
         margin: 0;
         cursor: pointer;
