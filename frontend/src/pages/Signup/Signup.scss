@@ -1,19 +1,51 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
 
-.login {
-    background-color: white;
+.group {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .login .div-3 {
-    background-color: var(--collection-1-white);
-    height: 984px;
-    overflow: hidden;
-    position: relative;
-    width: 1440px;
-  }
-  
+    flex-direction: column;
+    align-items: center;
+    // background-color: black;
+
+    .title {
+        @extend .paragraph1;
+        font-size: 30px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .text-wrapper-3 {
+        @extend .paragraph4;
+        margin: 0;
+    }
+
+    .signup-content {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column; 
+        align-items: start;
+        .signup-section {
+            margin-bottom: 20px;
+            .text-wrapper-1 {
+                @extend .paragraph3;
+                margin-bottom: 10px;
+            }
+            .container {
+                display: flex;
+                flex-direction: row;
+                .text-wrapper-2 {
+                    @extend .paragraph4;
+                    box-sizing: border-box;
+                    padding: 10px;
+                    width: 500px;
+                    height: 40px;
+                    margin-right: 20px;
+                    justify-content: center;
+                }
+                .text-wrapper-3 {
+                    @extend .paragraph4;
+                }
+            }
+        }
+    }
+}

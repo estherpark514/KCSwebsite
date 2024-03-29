@@ -1,19 +1,38 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fonts.scss';
 
-.login {
-    background-color: white;
+.group {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .login .div-3 {
-    background-color: var(--collection-1-white);
-    height: 984px;
-    overflow: hidden;
-    position: relative;
-    width: 1440px;
-  }
-  
+    flex-direction: column;
+    align-items: center;
+    // background-color: black;
+
+    .title {
+        @extend .paragraph1;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .login-content {
+        display: flex;
+        flex-direction: column; 
+        align-items: start;
+        
+        .text-wrapper-1 {
+            @extend .paragraph3;
+        }
+        .text-wrapper-2 {
+            @extend .paragraph4;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 400px;
+            height: 40px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    }
+    .text-wrapper-4 {
+        @extend .paragraph4;
+        margin-top: 10px;
+    }
+}

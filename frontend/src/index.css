@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale; */
   margin: 0;
   padding: 0;
+  margin-bottom: 0;
+
   /* padding-left: 0; */
   /* background: darkblue; */
 }
@@ -29,6 +31,8 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
+  margin-bottom: 0;
+
   /* padding-bottom: 0; */
   /* background: blue; */
   /* display: flex;
