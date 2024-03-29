@@ -109,8 +109,8 @@ const Header = () => {
           <FontAwesomeIcon icon={faChevronDown} />
         </div> */}
         <div className="auth">
-          <Button name="LOG IN" className="white" link="/" />
-          <Button name="SIGN UP" className="gray" link="/" />
+          <Button name="LOG IN" className="white" link="/login" />
+          <Button name="SIGN UP" className="gray" link="/signup" />
         </div>
       </div>
     </div>

@@ -9,6 +9,8 @@ import Resources from "./pages/Resources/Resources";
 import JoinUs from "./pages/JoinUs/JoinUs";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 import "./App.css";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Route path="/programs" element={<Programs />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/joinus" element={<JoinUs />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
 
       <Footer />

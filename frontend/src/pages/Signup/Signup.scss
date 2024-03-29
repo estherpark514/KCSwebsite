@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.login {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .login .div-3 {
+    background-color: var(--collection-1-white);
+    height: 984px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
