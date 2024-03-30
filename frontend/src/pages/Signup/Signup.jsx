@@ -101,7 +101,7 @@ function Signup() {
               onChange={(e) => setOtp(e.target.value)}
             />
             <Button
-              name="Verify OTP"
+              name="Verify"
               className="white"
               onClick={handleVerifyOTP}
             />

@@ -3,24 +3,14 @@ import { ProgramContainer } from "../../components/ProgramContainer/ProgramConta
 import "./Programs.scss";
 
 function Programs() {
-  const [programsData, setPrograms] = useState([]);
   const [programsSectionData, setProgramsSections] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const programsResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}programs/`
-        );
         const programsSectionResponse = await fetch(
           `${import.meta.env.VITE_API_URL}programs-sections/`
         );
-
-        if (!programsResponse.ok) {
-          throw new Error(
-            `Failed to fetch programs info data. Status: ${programsResponse.status}`
-          );
-        }
 
         if (!programsSectionResponse.ok) {
           throw new Error(
@@ -28,10 +18,8 @@ function Programs() {
           );
         }
 
-        const programsResult = await programsResponse.json();
         const programsSectionResult = await programsSectionResponse.json();
 
-        setPrograms(programsResult[0]);
         setProgramsSections(programsSectionResult);
       } catch (error) {
         console.error("Error fetching data:", error.message);
@@ -52,8 +40,10 @@ function Programs() {
   return (
     <>
       <div className="program-title-container">
-        <div className="program-title">{programsData.title}</div>
-        <div className="program-subtitle">{programsData.subtitle}</div>
+        <div className="program-title">GTKCS Programs</div>
+        <div className="program-subtitle">
+          Our accomplishments in such a brief period
+        </div>
       </div>
 
       <div className="programs-content">

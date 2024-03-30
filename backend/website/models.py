@@ -4,10 +4,8 @@ from ckeditor.fields import RichTextField
 
 # Home
 class Home(models.Model):
-    title = RichTextField()
-    subtitle = RichTextField()
-    title_image = models.ImageField(upload_to="home/title_image/")
-    logo_image = models.ImageField(upload_to="logo", null=True)
+    title_image = models.ImageField(upload_to="media/home/title_image/")
+    logo_image = models.ImageField(upload_to="media/logo", null=True)
     footer = RichTextField(default="")
     github_link = models.CharField(max_length=200, null=True)
     instagram_link = models.CharField(max_length=200, null=True)
@@ -19,20 +17,16 @@ class Home(models.Model):
 # MissionSection
 class MissionSection(models.Model):
     home = models.ForeignKey(Home, on_delete=models.CASCADE)
-    mission_heading = RichTextField()
-    mission_subheading = RichTextField()
-    mission_image = models.ImageField(upload_to="home/mission_image/")
+    mission_image = models.ImageField(upload_to="media/mission_image")
 
     def __str__(self):
-        return self.mission_heading
+        return f"Mission"
 
 
 # AboutUs
 class AboutUs(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
     about_us_description = models.TextField()
-    image = models.ImageField(upload_to="about_us/title_section_images/")
+    image = models.ImageField(upload_to="media/aboutGTKCS/")
 
     def __str__(self):
         return f"About Us"
@@ -92,13 +86,7 @@ class USCompanies(models.Model):
 
 # Roles
 class Roles(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = RichTextField()
-    roles_description = models.TextField()
-    executive_title = models.CharField(max_length=200)  # Set a default value
-    executive_description = models.TextField()
-    website_management_title = models.CharField(max_length=200)
-    website_management_description = models.TextField(default="")
+    description = models.TextField()
 
     def __str__(self):
         return f"Roles"
@@ -124,18 +112,16 @@ class WebsiteManagement(models.Model):
 
 # Programs
 class Programs(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.title
+        return f"Program"
 
 
 class ProgramsSections(models.Model):
     programs = models.ForeignKey(Programs, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     frequency = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="programs/images/")
+    image = models.ImageField(upload_to="media/programs/")
 
     def __str__(self):
         return f"Programs Section - {self.id}"

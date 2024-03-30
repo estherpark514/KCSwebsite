@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./Dropdown.scss";
 
-const Dropdown = ({ options, onSelect }) => {
+export const Dropdown = ({ options, onSelect }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -53,5 +53,3 @@ const Dropdown = ({ options, onSelect }) => {
     </div>
   );
 };
-
-export default Dropdown;

@@ -4,17 +4,17 @@ from ..models import Home, MissionSection, AboutUs, ProgressSection, SponsorInfo
 class HomeSerializer(ModelSerializer):
     class Meta:
         model = Home
-        fields = ('id', 'title', 'subtitle', 'title_image', 'logo_image', 'footer', 'github_link', 'instagram_link')
+        fields = ('id', 'title_image', 'logo_image', 'footer', 'github_link', 'instagram_link')
 
 class MissionSectionSerializer(ModelSerializer):
     class Meta:
         model = MissionSection
-        fields = ('id', 'mission_heading', 'mission_subheading', 'mission_image')
+        fields = ('id', 'mission_image')
 
 class AboutUsSerializer(ModelSerializer):
     class Meta:
         model = AboutUs
-        fields = ('id', 'title', 'subtitle', 'about_us_description', 'image')
+        fields = ('id', 'about_us_description', 'image')
 
 class ProgressSectionSerializer(ModelSerializer):
     class Meta:
@@ -48,7 +48,7 @@ class USCompaniesSerializer(ModelSerializer):
 class RolesSerializer(ModelSerializer):
     class Meta:
         model = Roles
-        fields = ('id', 'title', 'subtitle', 'roles_description', 'executive_title', 'executive_description', 'website_management_title', 'website_management_description')
+        fields = ('id', 'description')
 
 class ExecutiveSerializer(ModelSerializer):
     class Meta:
@@ -63,7 +63,7 @@ class WebsiteManagementSerializer(ModelSerializer):
 class ProgramsSerializer(ModelSerializer):
     class Meta:
         model = Programs
-        fields = ('id', 'title', 'subtitle')
+        fields = ('id')
 
 class ProgramsSectionsSerializer(ModelSerializer):
     class Meta:

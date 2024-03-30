@@ -60,7 +60,7 @@ const Executives = () => {
             Join The Momentum: Building A Giant Wave <br />
             of GT Korean Computer Scientists Together <br />
           </div>
-          <div className="content">{rolesData.roles_description}</div>
+          <div className="content">{rolesData.description}</div>
         </div>
       </div>
       <div className="roles-container">
