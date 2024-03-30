@@ -1,14 +1,65 @@
 import React, { useState } from "react";
 import { Button } from "../../components/Button/Button";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
 import "./Signup.scss";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
   const [buttonText, setButtonText] = useState("Verify");
+  const [major, setMajor] = useState("");
+  const [classStanding, setClassStanding] = useState("");
 
   const handleButtonClick = () => {
+    // Here, you would trigger the API request to send the OTP to the provided email
+    // Update buttonText accordingly, maybe also disable the button for a certain time
+    // Once OTP is sent, you might want to switch to a "Resend" option
     setButtonText("Resend");
+  };
+
+  const majors = [
+    "Computer Science",
+    "Mechanical Engineering",
+    "Industrial and Systems Engineering",
+    "Electrical Computer Engineering",
+    "Business",
+    "Chemical and Biomolecular Engineering",
+    "Others"
+  ];
+
+  const standings = [
+    "Freshman",
+    "Sophomore",
+    "Junior",
+    "Senior"
+  ];
+
+  const handleVerifyOTP = () => {
+    // Here, you would trigger the API request to verify the entered OTP
+    // You can send the entered OTP value (otp) to the backend for verification
+    // Upon successful verification, you can redirect the user to the next step or perform any other action
+    // You may also want to handle error cases
+    // Example:
+    fetch("/verify_otp/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ otp }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Redirect or perform other actions upon successful OTP verification
+          // Example redirect: window.location.href = '/success';
+        } else {
+          // Handle error case
+          console.error("Failed to verify OTP");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -43,11 +94,17 @@ function Signup() {
         <div className="signup-section">
           <div className="container">
             <input
-              type="verification"
+              type="text"
               className="text-wrapper-2"
               placeholder="Your verification code"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
             />
-            <Button name="verify" className="white" link="/" />
+            <Button
+              name="Verify OTP"
+              className="white"
+              onClick={handleVerifyOTP}
+            />
           </div>
         </div>
         <div className="signup-section">
@@ -87,11 +144,11 @@ function Signup() {
         </div>
         <div className="signup-section">
           <div className="text-wrapper-1">Major</div>
-          {/* <Dropdown options={options} /> */}
+          <Dropdown options={majors} onSelect={setMajor} />
         </div>
         <div className="signup-section">
           <div className="text-wrapper-1">Class Standing</div>
-          {/* <Dropdown options={options} /> */}
+          <Dropdown options={standings} onSelect={setClassStanding} />
         </div>
       </div>
       <Button name="Create an account" className="white" link="/" />
