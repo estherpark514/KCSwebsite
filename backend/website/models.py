@@ -109,22 +109,13 @@ class WebsiteManagement(models.Model):
     def __str__(self):
         return f"Website Management Team Role - {self.name}"
 
-
-# Programs
-class Programs(models.Model):
-
-    def __str__(self):
-        return f"Program"
-
-
 class ProgramsSections(models.Model):
-    programs = models.ForeignKey(Programs, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     frequency = models.CharField(max_length=200)
     image = models.ImageField(upload_to="media/programs/")
 
     def __str__(self):
-        return f"Programs Section - {self.id}"
+        return self.name
 
 
 # Resources

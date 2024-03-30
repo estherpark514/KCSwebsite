@@ -12,7 +12,6 @@ from .views import (
     RolesViewSet,
     ExecutiveViewSet,
     WebsiteManagementViewSet,
-    ProgramsViewSet,
     ProgramsSectionsViewSet,
     ResourcesViewSet,
     JoinUsViewSet,
@@ -56,9 +55,6 @@ executive_router.register(r"executive", ExecutiveViewSet)
 
 website_management_router = DefaultRouter()
 website_management_router.register(r"website-management", WebsiteManagementViewSet)
-
-programs_router = DefaultRouter()
-programs_router.register(r"programs", ProgramsViewSet)
 
 programs_sections_router = DefaultRouter()
 programs_sections_router.register(r"programs-sections", ProgramsSectionsViewSet)

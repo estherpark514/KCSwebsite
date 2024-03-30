@@ -12,7 +12,6 @@ from website.api.urls import (
     roles_router,
     executive_router,
     website_management_router,
-    programs_router,
     programs_sections_router,
     resources_router,
     join_us_router,
@@ -56,9 +55,6 @@ router.registry.extend(executive_router.registry)
 
 # Website Management
 router.registry.extend(website_management_router.registry)
-
-# Programs
-router.registry.extend(programs_router.registry)
 
 # Programs Sections
 router.registry.extend(programs_sections_router.registry)

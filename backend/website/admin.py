@@ -1,7 +1,7 @@
 from django.contrib import admin
 # from ckeditor.widgets import CKEditorWidget
 # from django import forms
-from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Partners, StudentOrganization, KoreanCompanies, USCompanies, Roles, Executive, WebsiteManagement, Programs, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
+from .models import Home, MissionSection, AboutUs, ProgressSection, SponsorInformationSection, SponsorSection, Partners, StudentOrganization, KoreanCompanies, USCompanies, Roles, Executive, WebsiteManagement, ProgramsSections, Resources, JoinUs, MembershipBenefits, OpenRoles, Sponsors
 
 #Home
 class MissionSectionInline(admin.StackedInline):
@@ -65,14 +65,7 @@ class RolesAdmin(admin.ModelAdmin):
 admin.site.register(Roles, RolesAdmin)
 
 #Programs
-class ProgramsSectionsInline(admin.StackedInline):
-    model = ProgramsSections
-    extra = 1
-
-class ProgramsAdmin(admin.ModelAdmin):
-    inlines = [ProgramsSectionsInline]
-
-admin.site.register(Programs, ProgramsAdmin)
+admin.site.register(ProgramsSections)
 
 #Resources
 admin.site.register(Resources)

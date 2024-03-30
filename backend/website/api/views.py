@@ -10,7 +10,6 @@ from ..models import (
     Roles,
     Executive,
     WebsiteManagement,
-    Programs,
     ProgramsSections,
     Resources,
     JoinUs,
@@ -30,7 +29,6 @@ from .serializers import (
     RolesSerializer,
     ExecutiveSerializer,
     WebsiteManagementSerializer,
-    ProgramsSerializer,
     ProgramsSectionsSerializer,
     ResourcesSerializer,
     JoinUsSerializer,
@@ -90,11 +88,6 @@ class ExecutiveViewSet(ModelViewSet):
 class WebsiteManagementViewSet(ModelViewSet):
     queryset = WebsiteManagement.objects.all()
     serializer_class = WebsiteManagementSerializer
-
-class ProgramsViewSet(ModelViewSet):
-    queryset = Programs.objects.all()
-    serializer_class = ProgramsSerializer
-
 
 class ProgramsSectionsViewSet(ModelViewSet):
     queryset = ProgramsSections.objects.all()
