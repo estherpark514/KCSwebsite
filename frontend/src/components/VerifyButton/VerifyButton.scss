@@ -1,0 +1,47 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.btn {
+  @extend .dark-gray-container;
+  @extend .menu;
+  color: white;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  
+  &.white {
+    border: 1px #33343F solid;
+    color: #33343F;
+    background-color: white;
+    
+    &:hover {
+        @extend .logo-color-light;
+        border-color: #8eb7e8;
+    }
+  }
+
+  &.gray {
+    background: #33343F;
+    color: white;
+
+    &:hover {
+        background: #8eb7e8;
+    }
+  }
+
+  &.joinus {
+    @extend .dark-gray;
+    background: white;
+
+    &:hover {
+        background: #8eb7e8;
+        color: white;
+    }
+  }
+}
