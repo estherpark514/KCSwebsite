@@ -19,10 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from accounts.views import *
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("core.api.urls")),
+    # path('register/', include('accounts.urls')),
+    path("register/", RegisterAPI.as_view()),
+    path("verify/", VerifyOTP.as_view()),
 ]
 
 if settings.DEBUG:
