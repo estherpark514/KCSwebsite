@@ -35,13 +35,9 @@
     }
   }
 
-  &.joinus {
+  &.resend {
     @extend .dark-gray;
-    background: white;
-
-    &:hover {
-        background: #8eb7e8;
-        color: white;
-    }
+    background: #8eb7e8;
+    color: white;
   }
 }

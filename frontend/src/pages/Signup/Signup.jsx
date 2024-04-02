@@ -12,6 +12,7 @@ function Signup() {
   const [lastName, setLastName] = useState("");
   const [otp, setOtp] = useState("");
   const [buttonText, setButtonText] = useState("Verify");
+  const [resendButtonStyle, setResendButtonStyle] = useState(false);
   const [major, setMajor] = useState("");
   const [classStanding, setClassStanding] = useState("");
   const [emailError, setEmailError] = useState(false);
@@ -23,7 +24,7 @@ function Signup() {
       alert("Invalid email address");
       return;
     }
-    
+
     fetch(`${import.meta.env.VITE_REGISTER_URL}`, {
       method: "POST",
       headers: {
@@ -38,6 +39,7 @@ function Signup() {
         console.log("Response from server:", data);
         if (data.status === 200) {
           setButtonText("Resend");
+          setResendButtonStyle(true);
         } else {
           alert("Failed to send an otp code");
         }
@@ -128,7 +130,7 @@ function Signup() {
             />
             <VerifyButton
               name={buttonText}
-              className="white"
+              className={!resendButtonStyle ? "white" : "resend"}
               onClick={handleButtonClick}
               disabled={emailError}
             />
