@@ -8,27 +8,38 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [otp, setOtp] = useState("");
   const [buttonText, setButtonText] = useState("Verify");
   const [major, setMajor] = useState("");
   const [classStanding, setClassStanding] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordMismatch, setPasswordMismatch] = useState(false);
+  const [passwordCondition, setPasswordCondition] = useState(false);
 
   const handleButtonClick = () => {
-    fetch(`${import.meta.env.VITE_API_URL}register`, {
+    if (!email.endsWith("@gatech.edu")) {
+      alert("Invalid email address");
+      return;
+    }
+    
+    fetch(`${import.meta.env.VITE_REGISTER_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, major, class_standing }),
+      body: JSON.stringify({
+        email,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log("Response from server:", data);
         if (data.status === 200) {
           setButtonText("Resend");
         } else {
-          alert("Failed to register");
+          alert("Failed to send an otp code");
         }
       })
       .catch((error) => {
@@ -37,12 +48,11 @@ function Signup() {
   };
 
   const majors = [
-    "Computer Science",
-    "Mechanical Engineering",
-    "Industrial and Systems Engineering",
-    "Electrical Computer Engineering",
     "Business",
-    "Chemical and Biomolecular Engineering",
+    "Computer Science",
+    "Electrical Computer Engineering",
+    "Industrial and Systems Engineering",
+    "Mechanical Engineering",
     "Others",
   ];
 
@@ -83,6 +93,15 @@ function Signup() {
       setPasswordMismatch(true);
     } else {
       setPasswordMismatch(false);
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 8) {
+      setPasswordCondition(true);
+    } else {
+      setPasswordCondition(false);
     }
   };
 
@@ -144,12 +163,17 @@ function Signup() {
               className="text-wrapper-2"
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // Correct: setPassword
+              onChange={(e) => {
+                setPassword(e.target.value);
+                handlePasswordChange(e);
+              }}
             />
           </div>
-          <div className="text-wrapper-3">
-            *Password must be at least 8 characters long
-          </div>
+          {passwordCondition && (
+            <div className="text-wrapper-3" style={{ color: "red" }}>
+              *Password must be at least 8 characters long
+            </div>
+          )}
         </div>
         <div className="signup-section">
           <div className="container">
@@ -174,6 +198,8 @@ function Signup() {
               type="first name (eng)"
               className="text-wrapper-2"
               placeholder="First name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
         </div>
@@ -184,6 +210,8 @@ function Signup() {
               type="last name (eng)"
               className="text-wrapper-2"
               placeholder="Last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
         </div>
@@ -196,7 +224,7 @@ function Signup() {
           <Dropdown options={standings} onSelect={setClassStanding} />
         </div>
       </div>
-      <Button name="Create an account" className="white" link="/" />
+      <Button name="Create an account" className="white" link="#" />
     </div>
   );
 }

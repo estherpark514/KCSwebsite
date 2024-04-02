@@ -14,28 +14,42 @@ class RegisterAPI(APIView):
     def post(self, request):
         try:
             data = request.data
+            print("Data received:", data)
             serializer = UserSerializer(data=data)
             if serializer.is_valid():
+                print("Serializer is valid")
+                email = serializer.validated_data['email']
+                user = CustomUser.objects.filter(email=email, is_verified=True)
+                if user.exists():
+                    return Response({"status": 400, "message": "Email already registered and verified"})
                 serializer.save()
-                send_otp_via_email(serializer.data["email"])
+                send_otp_via_email(email)
                 return Response(
                     {
                         "status": 200,
-                        "message": "registration successfully check email",
+                        "message": "Registration successful. Check email for verification",
                         "data": serializer.data,
                     }
                 )
-
-            return Response(
-                {
-                    "status": 400,
-                    "message": "something went wrong",
-                    "data": serializer.errors,
-                }
-            )
+            else:
+                print("Serializer errors:", serializer.errors)  
+                return Response(
+                    {
+                        "status": 400,
+                        "message": "Something went wrong",
+                        "data": serializer.errors,
+                    }
+                )
 
         except Exception as e:
-            print(e)
+            print("Exception occurred:", e)  
+            return Response(
+                {
+                    "status": 500,
+                    "message": "Internal server error",
+                    "data": str(e),
+                }
+            )
 
 
 class VerifyOTP(APIView):
