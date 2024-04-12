@@ -57,7 +57,7 @@ const Footer = () => {
             to="/roles"
             onClick={handleLinkClick}
           >
-            Roles
+            Our Team
           </Link>
         </div>
         <div className="footer-frame">
