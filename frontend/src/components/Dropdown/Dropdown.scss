@@ -1,8 +1,14 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
 .dropdown {
+  @extend .paragraph4;
     position: relative;
     display: inline-block;
     width: 500px;
     height: 40px;
+    // align-items: center;
+    // justify-content: center;
 
     .selected-option {
       cursor: pointer;
@@ -12,6 +18,7 @@
       min-width: 150px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   
     .options {
