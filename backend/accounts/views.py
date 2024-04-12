@@ -62,26 +62,29 @@ class VerifyOTP(APIView):
                 email = serializer.data["email"]
                 otp = serializer.data["otp"]
 
+                # Fetch user by email
                 user = CustomUser.objects.filter(email=email)
 
                 if not user.exists():
                     return Response(
                         {
                             "status": 400,
-                            "message": "something went wrong",
-                            "data": "invalid email",
+                            "message": "Invalid email",
+                            "data": {},
                         }
                     )
 
+                # Check if OTP matches
                 if user[0].otp != otp:
                     return Response(
                         {
                             "status": 400,
-                            "message": "something went wrong",
-                            "data": "wrong otp",
+                            "message": "Wrong OTP",
+                            "data": {},
                         }
                     )
-                
+
+                # Mark user as verified
                 user = user.first()
                 user.is_verified = True
                 user.save()
@@ -89,12 +92,26 @@ class VerifyOTP(APIView):
                 return Response(
                     {
                         "status": 200,
-                        "message": "account verified",
+                        "message": "Account verified",
                         "data": {},
                     }
                 )
+            else:
+                return Response(
+                    {
+                        "status": 400,
+                        "message": "Invalid data",
+                        "data": serializer.errors,
+                    }
+                )
         except Exception as e:
-            print(e)
+            return Response(
+                {
+                    "status": 500,
+                    "message": "Internal server error",
+                    "data": str(e),
+                }
+            )
 
 
 # @csrf_exempt

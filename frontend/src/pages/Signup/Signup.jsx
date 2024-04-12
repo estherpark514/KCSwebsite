@@ -12,6 +12,8 @@ function Signup() {
   const [lastName, setLastName] = useState("");
   const [otp, setOtp] = useState("");
   const [buttonText, setButtonText] = useState("Verify");
+  const [otpText, setOtpText] = useState("Verify");
+  const [otpButtonStyle, setOtpButtonStyle] = useState(false);
   const [resendButtonStyle, setResendButtonStyle] = useState(false);
   const [major, setMajor] = useState("");
   const [classStanding, setClassStanding] = useState("");
@@ -61,18 +63,19 @@ function Signup() {
   const standings = ["Freshman", "Sophomore", "Junior", "Senior"];
 
   const handleVerifyOTP = () => {
-    fetch(`${import.meta.env.VITE_API_URL}verify`, {
+    fetch(`${import.meta.env.VITE_VERIFY_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, otp }),
     })
-      .then((response) => {
-        if (response.ok) {
-          console.log("OTP verified successfully");
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 200) {
+          setOtpText("Verified");
         } else {
-          console.error("Failed to verify OTP");
+          alert("Failed to verify OTP");
         }
       })
       .catch((error) => {
@@ -151,8 +154,8 @@ function Signup() {
               onChange={(e) => setOtp(e.target.value)}
             />
             <VerifyButton
-              name="Verify"
-              className="white"
+              name={otpText}
+              className={!otpButtonStyle ? "white" : "resend"}
               onClick={handleVerifyOTP}
             />
           </div>
