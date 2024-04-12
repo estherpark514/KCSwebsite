@@ -74,6 +74,7 @@ function Signup() {
       .then((data) => {
         if (data.status === 200) {
           setOtpText("Verified");
+          setOtpButtonStyle(true);
         } else {
           alert("Failed to verify OTP");
         }

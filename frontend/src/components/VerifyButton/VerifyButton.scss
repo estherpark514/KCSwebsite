@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
 
-.btn {
+.verify-btn {
   @extend .dark-gray-container;
   @extend .menu;
   color: white;
@@ -14,6 +14,7 @@
   border-radius: 50px;
   text-transform: uppercase;
   word-wrap: break-word;
+  width: 80px;
   
   &.white {
     border: 1px #33343F solid;
