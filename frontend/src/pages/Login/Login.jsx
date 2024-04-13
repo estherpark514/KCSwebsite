@@ -63,6 +63,7 @@ function Login() {
         onClick={handleLogin}
         style={{ marginBottom: "20px" }}
       />
+      <div className="text-wrapper-4">Forgot your email address?</div>
       <div className="text-wrapper-4">Forgot your password?</div>
     </div>
   );

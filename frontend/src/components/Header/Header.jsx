@@ -87,7 +87,7 @@ const Header = () => {
                   <div className="menu-item">About GTKCS</div>
                 </Link>
                 <Link to="/executives">
-                  <div className="menu-item">Executives</div>
+                  <div className="menu-item">Our Team</div>
                 </Link>
                 <Link to="/partners">
                   <div className="menu-item">Partners</div>

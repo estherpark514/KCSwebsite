@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./JoinUs.scss";
 import { Button } from "../../components/Button/Button";
+import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 
 function JoinUs() {
   const [joinUsData, setJoinUs] = useState([]);
@@ -77,10 +78,15 @@ function JoinUs() {
             <div className="title">
               Are you interested in membership benefits?
             </div>
-            <Button
+            <VerifyButton
               name="Membership Application Form"
               className="gray"
-              link={joinUsData.membership_application_form_link}
+              onClick={() =>
+                window.open(
+                  joinUsData.membership_application_form_link,
+                  "_blank"
+                )
+              }
             />
             <div className="description">
               <div className="text-header">
@@ -101,22 +107,21 @@ function JoinUs() {
               Do you want to join our leadership team?
             </div>
             <div className="button">
-              <Button
+              <VerifyButton
                 name="FALL 2024 LEADERSHIP TEAM APPLICATION FORM"
                 className="gray"
-                link={openRolesData.application_form_link}
+                onClick={() =>
+                  window.open(openRolesData.application_form_link, "_blank")
+                }
               />
             </div>
             <div className="description">
               <div className="text-header">Open roles:</div>
-              <div className="text-subheader">Executive team:</div>
               <div className="text">{openRolesData.executive_roles}</div>
-              <div className="text-subheader">Website management team:</div>
-              <div className="text">{openRolesData.web_management_roles}</div>
               <Button
                 name="Job Description"
                 className="gray"
-                link="/roles"
+                link="/executives"
                 onClick={handleLinkClick}
               />
             </div>

@@ -55,7 +55,7 @@ const Executives = () => {
     <>
       <div className="outer-container">
         <div className="inner-container">
-          <div className="heading">EXECUTIVES</div>
+          <div className="heading">Our Team</div>
           <div className="subheading">
             Join The Momentum: Building A Giant Wave <br />
             of GT Korean Computer Scientists Together <br />
