@@ -48,7 +48,7 @@
     text-align: left;
     justify-content: space-between;
     align-items: flex-start;
-    width: 40%;
+    width: calc(50% - 50px);
     // height: 40%;
     margin: 0;
     padding: 0;
@@ -95,6 +95,21 @@
         text-decoration: underline;
         font-weight: 500;
       }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    // justify-content: flex-start;
+    align-items: flex-start;
+    .footer-phrase {
+      justify-content: flex-start;
+    }
+    .footer-link-container {
+      width: 100%;
+      margin-top: 10px;
     }
   }
 }

@@ -149,7 +149,7 @@
 
     .home-section2-picture {
         // object-fit: cover;
-        width: 100%;
+        width: calc(100% - 50% - 30px);
         margin: 0;
         padding: 0;
         height: 70%;
