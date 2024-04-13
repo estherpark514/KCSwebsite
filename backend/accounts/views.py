@@ -4,13 +4,7 @@ from rest_framework.response import Response
 from .serializers import *
 from .emails import *
 from rest_framework import status
-
-
-# from django.http import JsonResponse
-# from django.views.decorators.csrf import csrf_exempt
-# from .models import User
-# import json
-
+from django.contrib.auth import authenticate
 
 class RegisterAPI(APIView):
     def post(self, request):
@@ -114,8 +108,6 @@ class VerifyOTP(APIView):
                     "data": str(e),
                 }
             )
-from rest_framework import status
-from rest_framework.response import Response
 
 class SignupAPI(APIView):
     def post(self, request):
@@ -148,3 +140,26 @@ class SignupAPI(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+class LoginAPI(APIView):
+    def post(self, request):
+        try:
+            data = request.data
+            email = data.get('email')
+            password = data.get('password')
+            user = authenticate(request, email=email, password=password)
+
+            if user is not None:
+                return Response({"status": 200, "message": "Login successful"})
+            else:
+                print("incorrect email or password")
+                return Response({"status": 401, "message": "Incorrect email or password"}, status=status.HTTP_401_UNAUTHORIZED)
+        except Exception as e:
+            print("Exception occurred login: ", e)
+            return Response(
+                {
+                    "status": 500,
+                    "message": "Internal server error",
+                    "data": str(e),
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

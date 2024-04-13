@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../components/Button/Button";
+import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 import "./Login.scss";
 
 function Login() {
@@ -9,7 +9,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("/api/login/", {
+      const response = await fetch(`${import.meta.env.VITE_LOGIN_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,11 +18,12 @@ function Login() {
       });
 
       if (response.ok) {
-        window.location.href = "/home";
+        window.location.href = "/";
       } else {
         setIncorrectCredentials(true);
       }
     } catch (error) {
+      alert("Incorrect email address or password");
       console.error("Error logging in:", error);
     }
   };
@@ -53,7 +54,7 @@ function Login() {
           <div className="error-message">Wrong email or password</div>
         )}
       </div>
-      <Button
+      <VerifyButton
         name="Log In"
         className="gray"
         onClick={handleLogin}

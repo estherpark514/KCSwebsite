@@ -25,10 +25,10 @@ from accounts.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("core.api.urls")),
-    # path('register/', include('accounts.urls')),
     path("register/", RegisterAPI.as_view()),
     path("verify/", VerifyOTP.as_view()),
     path("signup/", SignupAPI.as_view()),
+    path("login/", LoginAPI.as_view()),
 ]
 
 if settings.DEBUG:
