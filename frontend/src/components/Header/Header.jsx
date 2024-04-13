@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button/Button";
+import { AuthContext } from "../../../utils/AuthContext";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchHeader() {
@@ -87,30 +89,26 @@ const Header = () => {
           <Link to="/programs">
             <div className="menu-item">Programs</div>
           </Link>
-          {/* <Link to="/projects">
-            <div className="menu-item">Projects</div>
-          </Link> */}
-          <Link to="/resources">
-            <div className="menu-item">RESOURCES</div>
-          </Link>
+          {isLoggedIn && (
+            <Link to="/resources">
+              <div className="menu-item">RESOURCES</div>
+            </Link>
+          )}
           <Link to="/joinus">
             <div className="menu-item">Join us</div>
           </Link>
         </div>
       </div>
       <div className="language-selector">
-        {/* <div className="language">
-          <img
-            className="icon"
-            src="https://via.placeholder.com/35x20"
-            alt="Language Icon"
-          />
-          <div className="text">ENG </div>
-          <FontAwesomeIcon icon={faChevronDown} />
-        </div> */}
         <div className="auth">
-          <Button name="LOG IN" className="white" link="/login" />
-          <Button name="SIGN UP" className="gray" link="/signup" />
+          {isLoggedIn ? (
+            <Button name="PROFILE" className="white" link="/profile" />
+          ) : (
+            <>
+              <Button name="LOG IN" className="white" link="/login" />
+              <Button name="SIGN UP" className="gray" link="/signup" />
+            </>
+          )}
         </div>
       </div>
     </div>

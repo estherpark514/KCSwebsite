@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 import "./Login.scss";
+import { AuthContext } from "../../../utils/AuthContext";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [incorrectCredentials, setIncorrectCredentials] = useState(false);
+  const { setLoginStatus } = useContext(AuthContext);
 
   const handleLogin = async () => {
     try {
@@ -18,6 +20,7 @@ function Login() {
       });
 
       if (response.ok) {
+        setLoginStatus(true);
         window.location.href = "/";
       } else {
         setIncorrectCredentials(true);
