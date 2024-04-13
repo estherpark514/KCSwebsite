@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../../components/Button/Button";
 import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
@@ -21,7 +21,7 @@ function Signup() {
   const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [passwordCondition, setPasswordCondition] = useState(false);
 
-  const handleButtonClick = () => {
+  const handleEmailClick = () => {
     if (!email.endsWith("@gatech.edu")) {
       alert("Invalid email address");
       return;
@@ -111,6 +111,50 @@ function Signup() {
     }
   };
 
+  const handleCreateAccount = () => {
+    if (
+      otpButtonStyle &&
+      !passwordMismatch &&
+      !passwordCondition &&
+      firstName &&
+      lastName &&
+      major &&
+      classStanding
+    ) {
+      fetch(`${import.meta.env.VITE_SIGNUP_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          firstName,
+          lastName,
+          major,
+          classStanding,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === 200) {
+            alert("Account created successfully!");
+            // Optionally, you can redirect the user to another page
+          } else {
+            alert("Failed to create account. Please try again.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again later.");
+        });
+    } else {
+      alert(
+        "Please fill in all required fields and verify OTP before creating an account."
+      );
+    }
+  };
+
   return (
     <div className="group">
       <div className="title">Sign Up</div>
@@ -135,8 +179,9 @@ function Signup() {
             <VerifyButton
               name={buttonText}
               className={!resendButtonStyle ? "white" : "resend"}
-              onClick={handleButtonClick}
+              onClick={handleEmailClick}
               disabled={emailError}
+              style={{ width: "80px" }}
             />
           </div>
           {emailError && (
@@ -158,6 +203,7 @@ function Signup() {
               name={otpText}
               className={!otpButtonStyle ? "white" : "resend"}
               onClick={handleVerifyOTP}
+              style={{ width: "80px" }}
             />
           </div>
         </div>
@@ -230,7 +276,11 @@ function Signup() {
           <Dropdown options={standings} onSelect={setClassStanding} />
         </div>
       </div>
-      <Button name="Create an account" className="white" link="#" />
+      <VerifyButton
+        name="Create an account"
+        className="white"
+        onClick={handleCreateAccount}
+      />
     </div>
   );
 }

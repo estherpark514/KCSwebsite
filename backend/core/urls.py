@@ -28,6 +28,7 @@ urlpatterns = [
     # path('register/', include('accounts.urls')),
     path("register/", RegisterAPI.as_view()),
     path("verify/", VerifyOTP.as_view()),
+    path("signup/", SignupAPI.as_view()),
 ]
 
 if settings.DEBUG:
