@@ -4,13 +4,14 @@ import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button/Button";
+import { VerifyButton } from "../VerifyButton/VerifyButton";
 import { AuthContext } from "../../../utils/AuthContext";
 
 const Header = () => {
   const [logo, setLogo] = useState({});
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, setLoginStatus } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchHeader() {
@@ -31,6 +32,14 @@ const Header = () => {
 
     fetchHeader();
   }, []);
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      setLoginStatus(false);
+      console.log("logout");
+    }
+  };
 
   const handleAboutUsHover = () => {
     setShowDropdown(true);
@@ -102,7 +111,14 @@ const Header = () => {
       <div className="language-selector">
         <div className="auth">
           {isLoggedIn ? (
-            <Button name="PROFILE" className="white" link="/profile" />
+            <>
+              <Button name="PROFILE" className="white" link="/profile" />
+              <VerifyButton
+                name="LOG OUT"
+                className="gray"
+                onClick={handleLogout}
+              />
+            </>
           ) : (
             <>
               <Button name="LOG IN" className="white" link="/login" />
