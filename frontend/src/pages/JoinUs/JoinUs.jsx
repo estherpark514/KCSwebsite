@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./JoinUs.scss";
 import { Button } from "../../components/Button/Button";
 import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
+import { AuthContext } from "../../../utils/AuthContext";
 
 function JoinUs() {
   const [joinUsData, setJoinUs] = useState([]);
   const [membershipData, setMembership] = useState([]);
   const [openRolesData, setOpenRoles] = useState([]);
   const [sponsorsData, setSponsors] = useState([]);
+  const { isLoggedIn, setLoginStatus } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchData() {
@@ -74,66 +76,82 @@ function JoinUs() {
       <div className="student-container">
         <div className="header">students</div>
         <div className="content">
-          <div className="section">
-            <div className="title">
-              Are you interested in membership benefits?
-            </div>
-            <VerifyButton
-              name="Membership Application Form"
-              className="gray"
-              onClick={() =>
-                window.open(
-                  joinUsData.membership_application_form_link,
-                  "_blank"
-                )
-              }
-            />
-            <div className="description">
-              <div className="text-header">
-                If you join our membership, you can ...
-              </div>
-              <div className="text">
-                {membershipData.map((benefit) => (
-                  <div key={benefit.id} className="text">
-                    {`${benefit.id}. ${benefit.benefits}`}
+          {isLoggedIn ? (
+            <>
+              <div className="section">
+                <div className="title">
+                  Are you interested in membership benefits?
+                </div>
+                <VerifyButton
+                  name="Membership Application Form"
+                  className="gray"
+                  onClick={() =>
+                    window.open(
+                      joinUsData.membership_application_form_link,
+                      "_blank"
+                    )
+                  }
+                />
+                <div className="description">
+                  <div className="text-header">
+                    If you join our membership, you can ...
                   </div>
-                ))}
+                  <div className="text">
+                    {membershipData.map((benefit) => (
+                      <div key={benefit.id} className="text">
+                        {`${benefit.id}. ${benefit.benefits}`}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="section">
-            <div className="title">
-              Do you want to join our leadership team?
-            </div>
-            <div className="button">
-              <VerifyButton
-                name="FALL 2024 LEADERSHIP TEAM APPLICATION FORM"
-                className="gray"
-                onClick={() =>
-                  window.open(openRolesData.application_form_link, "_blank")
-                }
-              />
-            </div>
-            <div className="description">
-              <div className="text-header">Open roles:</div>
-              <div className="text">{openRolesData.executive_roles}</div>
-              <Button
-                name="Job Description"
-                className="gray"
-                link="/executives"
-                onClick={handleLinkClick}
-              />
-            </div>
-          </div>
+              <div className="section">
+                <div className="title">
+                  Do you want to join our leadership team?
+                </div>
+                <div className="button">
+                  <VerifyButton
+                    name="FALL 2024 LEADERSHIP TEAM APPLICATION FORM"
+                    className="gray"
+                    onClick={() =>
+                      window.open(openRolesData.application_form_link, "_blank")
+                    }
+                  />
+                </div>
+                <div className="description">
+                  <div className="text-header">Open roles:</div>
+                  <div className="text">{openRolesData.executive_roles}</div>
+                  <Button
+                    name="Job Description"
+                    className="gray"
+                    link="/executives"
+                    onClick={handleLinkClick}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="section">
+                <div className="text">
+                  Please log in to learn more about joining our club as a member
+                  and/or part of the leadership team! <br />
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
-      <div className="sponsors-container">
-        <div className="header">PARTNERS</div>
-        <div className="section">
-          <div className="text">{sponsorsData.instruction}</div>
-        </div>
-      </div>
+      {!isLoggedIn && (
+        <>
+          <div className="sponsors-container">
+            <div className="header">PARTNERS</div>
+            <div className="section">
+              <div className="text">{sponsorsData.instruction}</div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
