@@ -139,6 +139,7 @@ function Signup() {
         .then((data) => {
           if (data.status === 200) {
             alert("Account created successfully!");
+            window.location.href = "/login";
             // Optionally, you can redirect the user to another page
           } else {
             alert("Failed to create account. Please try again.");
