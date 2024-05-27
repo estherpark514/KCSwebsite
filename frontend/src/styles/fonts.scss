@@ -81,3 +81,30 @@
     line-height: 188%;
     word-wrap: break-word;
 }
+
+@media (max-width: 900px) {
+    .heading1 {
+        font-size: 60px;
+    }
+    .subheading1 {
+        font-size: 15px;
+    }
+    .paragraph1 {
+        font-size: 20px;
+    }
+    .paragraph3 {
+        font-size: 13px;
+    }
+    .menu {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paragraph1 {
+        font-size: 15px;
+    }
+    .menu {
+        font-size: 10px;
+    }
+}

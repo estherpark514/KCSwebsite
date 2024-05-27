@@ -1,0 +1,100 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.student-org {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 2% 15% 0% 15%;
+
+  .slideshow-container {
+    display: flex;
+    position: relative;
+
+    .nav-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+
+    .overlap-group-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+  }
+
+  .overlap-group-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px; // Ensure each item has a fixed width
+  }
+
+  .overlap-group-white,
+  .overlap-group-blue {
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 350px;
+    position: relative;
+    width: 250px; // Ensure the item takes full width of its container
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+
+    .union {
+      height: 200px;
+      width: 200px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .text-wrapper-2 {
+      @extend .paragraph4;
+      margin-bottom: 20px;
+      height: 40px;
+    }
+
+    .more-wrapper {
+      @extend .paragraph4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  .overlap-group-white {
+    @extend .dark-border-3;
+  }
+
+  .overlap-group-blue {
+    @extend .light-blue-container;
+  }
+}

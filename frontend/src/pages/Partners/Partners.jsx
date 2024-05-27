@@ -1,62 +1,50 @@
 import React, { useState, useEffect } from "react";
 import "./Partners.scss";
+import { Slideshow } from "../../components/Slideshow/Slideshow";
 
 function Partners() {
-  const [aboutUsData, setAboutUs] = useState([]);
-  const [progressData, setProgress] = useState([]);
-  const [sponsorInfoData, setSponsorInfo] = useState([]);
-  const [sponsorData, setSponsor] = useState([]);
+  const [studentOrg, setStudentOrg] = useState([]);
+  const [koreanCompanies, setKoreanCompanies] = useState([]);
+  const [USCompanies, setUSCompanies] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch about us data
-        const aboutUsResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}about-us/`
+        // Fetch student-org data
+        const studentOrgResponse = await fetch(
+          `${import.meta.env.VITE_API_URL}student-org/`
         );
-        if (!aboutUsResponse.ok) {
+        if (!studentOrgResponse.ok) {
           throw new Error(
-            `Failed to fetch about us data. Status: ${aboutUsResponse.status}`
+            `Failed to fetch about us data. Status: ${studentOrgResponse.status}`
           );
         }
-        const aboutUsResult = await aboutUsResponse.json();
-        setAboutUs(aboutUsResult[0]);
+        const studentOrgResult = await studentOrgResponse.json();
+        setStudentOrg(studentOrgResult);
 
-        // Fetch progress data
-        const progressResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}progress-section/`
+        // Fetch korean-companies data
+        const koreanCompaniesResponse = await fetch(
+          `${import.meta.env.VITE_API_URL}korean-companies/`
         );
-        if (!progressResponse.ok) {
+        if (!koreanCompaniesResponse.ok) {
           throw new Error(
-            `Failed to fetch progress data. Status: ${progressResponse.status}`
+            `Failed to fetch progress data. Status: ${koreanCompaniesResponse.status}`
           );
         }
-        const progressResult = await progressResponse.json();
-        setProgress(progressResult);
+        const koreanCompaniesResult = await koreanCompaniesResponse.json();
+        setKoreanCompanies(koreanCompaniesResult);
 
-        // Fetch sponsor info data
-        const sponsorInfoResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}sponsor-information-section/`
+        // Fetch us-companies data
+        const USCompaniesResponse = await fetch(
+          `${import.meta.env.VITE_API_URL}us-companies/`
         );
-        if (!sponsorInfoResponse.ok) {
+        if (!USCompaniesResponse.ok) {
           throw new Error(
-            `Failed to fetch sponsor info data. Status: ${sponsorInfoResponse.status}`
+            `Failed to fetch sponsor info data. Status: ${USCompaniesResponse.status}`
           );
         }
-        const sponsorInfoResult = await sponsorInfoResponse.json();
-        setSponsorInfo(sponsorInfoResult[0]);
-
-        // Fetch sponsor data
-        const sponsorResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}sponsor-section/`
-        );
-        if (!sponsorResponse.ok) {
-          throw new Error(
-            `Failed to fetch sponsor data. Status: ${sponsorResponse.status}`
-          );
-        }
-        const sponsorResult = await sponsorResponse.json();
-        setSponsor(sponsorResult);
+        const USCompaniesResult = await USCompaniesResponse.json();
+        setUSCompanies(USCompaniesResult);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -64,14 +52,6 @@ function Partners() {
 
     fetchData();
   }, []);
-
-  const ProgressItem = ({ name, stat, moreLink }) => (
-    <div className="progress-item">
-      <div className="progress-circle">{stat}</div>
-      <div className="progress-label">{name}</div>
-      {moreLink && <div className="more-link">{moreLink}</div>}
-    </div>
-  );
 
   return (
     <>
@@ -94,8 +74,12 @@ function Partners() {
           </div>
         </div>
       </div>
-
-      
+      <div className="text-wrapper">Georgia Tech Student Organizations</div>
+      <Slideshow data={studentOrg} />
+      {/* <div className="text-wrapper">US Companies</div>
+      <Slideshow data={USCompanies} /> */}
+      <div className="text-wrapper">Korean Companies</div>
+      <Slideshow data={koreanCompanies} />
     </>
   );
 }

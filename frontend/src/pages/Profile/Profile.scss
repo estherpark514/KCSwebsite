@@ -1,0 +1,39 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: black;
+
+    .title {
+        @extend .paragraph1;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .profile-content {
+        display: flex;
+        flex-direction: column; 
+        align-items: start;
+        
+        .text-wrapper-1 {
+            @extend .paragraph3;
+            font-weight: 800;
+        }
+        .text-wrapper-2 {
+            @extend .paragraph4;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 400px;
+            height: 40px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    }
+    .text-wrapper-4 {
+        @extend .paragraph4;
+        margin-top: 3px;
+    }
+}

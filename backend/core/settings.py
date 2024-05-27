@@ -55,9 +55,7 @@ INSTALLED_APPS = [
     'accounts'
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Add your frontend origin here
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

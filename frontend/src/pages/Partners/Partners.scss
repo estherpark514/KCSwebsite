@@ -64,3 +64,8 @@
       }
     }
   }
+  .text-wrapper {
+    @extend .heading3;
+    white-space: nowrap;
+    margin: 2% 15% 0 15%;
+  }
