@@ -52,13 +52,16 @@ INSTALLED_APPS = [
     'ckeditor',
 
     'website',
-    'accounts'
+    'accounts',  # <-- Don't forget the comma here
+
+    'whitenoise.runserver_nostatic',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,6 +136,9 @@ MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
+# Static files directory for production deployment
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -145,3 +151,6 @@ EMAIL_USE_TLS = env('EMAIL_USE_TLS', default=True)
 EMAIL_PORT = env('EMAIL_PORT', default=587)
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
+# Whitenoise configuration for serving static files in production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
