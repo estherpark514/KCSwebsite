@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
-    'ckeditor',
+    'django_ckeditor_5',
 
     'website',
     'accounts',
