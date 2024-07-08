@@ -45,6 +45,12 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
 ]
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'versionCheck': False
+    }
+}
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
