@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-aiobotocore = {file = "../../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_28sh5ufai0/croot/aiobotocore_1701291514455/work"}
 aiohttp = {file = "../../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d0kuw1pu3l/croot/aiohttp_1707342310304/work"}
 aioitertools = {file = "../../../../../../private/tmp/build/80754af9/aioitertools_1607109665762/work"}
 aiosignal = {file = "../../../../../../private/tmp/build/80754af9/aiosignal_1637843061372/work"}
