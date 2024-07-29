@@ -1,12 +1,13 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+# from ckeditor.fields import RichTextField
 
 
 # Home
 class Home(models.Model):
     title_image = models.ImageField(upload_to="media/home/title_image/")
     logo_image = models.ImageField(upload_to="media/logo", null=True)
-    footer = RichTextField(default="")
+    # footer = RichTextField(default="")
+    footer = models.CharField(max_length=200, null=True)
     github_link = models.CharField(max_length=200, null=True)
     instagram_link = models.CharField(max_length=200, null=True)
 
@@ -44,7 +45,8 @@ class ProgressSection(models.Model):
 class SponsorInformationSection(models.Model):
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    subtitle = RichTextField()
+    # subtitle = RichTextField()
+    subtitle = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return f"Sponsor Section"
