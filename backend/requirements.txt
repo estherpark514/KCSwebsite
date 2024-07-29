@@ -1,11 +1,6 @@
-# appdirs==1.4.4
 asgiref==3.7.2
-# atomicwrites==1.4.0
-# backports.weakref==1.0.post1
-# clyent==1.2.2
-# conda-repo-cli==1.0.75
-# conda-verify==3.4.2
-# distlib==0.3.8
+certifi==2024.7.4
+distlib==0.3.8
 dj-database-url==2.1.0
 Django==5.0.3
 django-ckeditor==6.7.1
@@ -14,24 +9,18 @@ django-cors-headers==4.3.1
 django-environ==0.11.2
 django-js-asset==2.2.0
 djangorestframework==3.14.0
-# et-xmlfile==1.1.0
-# fonttools==4.25.0
+filelock==3.15.4
 gunicorn==22.0.0
-# inflection==0.5.1
-# jsonpointer==2.1
-# munkres==1.1.4
-# openpyxl==3.0.10
-# patsy==0.5.3
+packaging==24.1
+pillow==10.4.0
 pipenv==2024.0.1
+platformdirs==4.2.2
 ply==3.11
 protobuf==3.20.3
-# pyasn1-modules==0.2.8
-# PyDispatcher==2.0.5
-# pyls-spyder==0.4.0
-# PyQt5==5.15.10
-# PyQtWebEngine==5.15.6
-# python-lsp-jsonrpc==1.0.0
-# sqlparse==0.4.4
-# virtualenv==20.26.3
-# webencodings==0.5.1
+pytz==2024.1
+setuptools==69.5.1
+sqlparse==0.5.1
+typing_extensions==4.12.2
+virtualenv==20.26.3
+wheel==0.43.0
 whitenoise==6.6.0
