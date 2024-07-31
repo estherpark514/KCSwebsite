@@ -10,7 +10,7 @@ django-environ==0.11.2
 django-js-asset==2.2.0
 djangorestframework==3.14.0
 django_ckeditor_5
-ckeditor
+django-ckeditor
 filelock==3.15.4
 gunicorn==22.0.0
 packaging==24.1
