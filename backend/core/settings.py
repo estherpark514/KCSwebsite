@@ -23,10 +23,9 @@ DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
-CSRF_TRUSTED_ORIGINS = ["https://kcswebsite-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 
 # CSRF_ALLOWED_ORIGINS = ["https://kcswebsite-production.up.railway.app/"]
-
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
