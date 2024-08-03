@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="footer-wrapper-bolded">General</div>
           <Link
             className="footer-wrapper"
-            to="/about-us"
+            to="/about-gtkcs"
             onClick={handleLinkClick}
           >
             About Us
@@ -54,7 +54,7 @@ const Footer = () => {
           </Link>
           <Link
             className="footer-wrapper"
-            to="/roles"
+            to="/executives"
             onClick={handleLinkClick}
           >
             Our Team
@@ -62,13 +62,21 @@ const Footer = () => {
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Get Involved</div>
-          <Link className="footer-wrapper" to="/joinus#join-us-section1">
+          <Link
+            className="footer-wrapper"
+            to="/joinus"
+            onClick={handleLinkClick}
+          >
             Students
           </Link>
-          <Link className="footer-wrapper" to="/joinus#join-us-section2">
-            Sponsors
+          <Link
+            className="footer-wrapper"
+            to="/partners"
+            onClick={handleLinkClick}
+          >
+            Partners
           </Link>
-          <a className="footer-wrapper">Contact Us</a>
+          {/* <a className="footer-wrapper">Contact Us</a> */}
         </div>
         <div className="footer-frame">
           <div className="footer-wrapper-bolded">Social Media</div>

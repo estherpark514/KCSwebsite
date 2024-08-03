@@ -51,9 +51,9 @@ export const Slideshow = ({ data }) => {
               <div className="overlap-group-white">
                 <img className="union" alt={item.name} src={item.logo} />
                 <div className="text-wrapper-2">{item.name}</div>
-                <div className="more-wrapper">
+                {/* <div className="more-wrapper">
                   More <FontAwesomeIcon icon={faChevronRight} />
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
