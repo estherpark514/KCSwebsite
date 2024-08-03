@@ -15,27 +15,23 @@ export const Slideshow = ({ data }) => {
   const handleMouseLeave = () => setShowNav(false);
 
   const scrollLeft = () => {
-    setCurrentIndex((prevIndex) => prevIndex - 1);
+    setCurrentIndex(0); // Move to the very first item
   };
 
   const scrollRight = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    setCurrentIndex(data.length - 1); // Move to the very last item
   };
 
   useEffect(() => {
     if (slideshowRef.current) {
-      const { clientWidth, scrollWidth } = slideshowRef.current;
-      const newScroll =
-        (clientWidth * (currentIndex + data.length)) %
-        (scrollWidth + clientWidth);
+      const { clientWidth } = slideshowRef.current;
+      const newScroll = clientWidth * currentIndex;
       slideshowRef.current.scrollTo({
         left: newScroll,
         behavior: "smooth",
       });
     }
   }, [currentIndex, data.length]);
-
-  const duplicatedData = data;
 
   return (
     <div
@@ -50,7 +46,7 @@ export const Slideshow = ({ data }) => {
           </div>
         )}
         <div className="overlap-group-container" ref={slideshowRef}>
-          {duplicatedData.map((item, index) => (
+          {data.map((item, index) => (
             <div key={index} className="overlap-group-wrapper">
               <div className="overlap-group-white">
                 <img className="union" alt={item.name} src={item.logo} />

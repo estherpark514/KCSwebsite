@@ -65,7 +65,8 @@
     }
   }
   .text-wrapper {
-    @extend .heading3;
+    @extend .paragraph2;
+    font-weight: 600;
     white-space: nowrap;
     margin: 2% 15% 0 15%;
   }
