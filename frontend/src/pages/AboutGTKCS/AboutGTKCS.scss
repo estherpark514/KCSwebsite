@@ -134,6 +134,7 @@
       padding: 4% 0;
       margin: 0;
       width: 100%;
+      // background-color: black;
   
       .progress-item {
         flex-direction: column;
@@ -142,14 +143,18 @@
         display: inline-flex;
         padding: 0;
         margin: 0;
-  
+        width: 20%;
+        // background-color: gray;
+
         .progress-circle {
           @extend .dark-gray;
           @extend .dark-border-6;
           @extend .heading2;
-          width: 170px;
-          height: 170px;
+          // background-color: black;
+          width: 100%;
+          aspect-ratio: 1 / 1;
           border-radius: 50%;
+          border-width: 3px;
           padding: 0;
           margin: 0;
           display: flex;

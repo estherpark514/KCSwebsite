@@ -22,7 +22,7 @@
     
     &:hover {
         @extend .logo-color-light;
-        border-color: #8eb7e8;
+        border-color: #898b9c;
     }
   }
 
@@ -31,13 +31,13 @@
     color: white;
 
     &:hover {
-        background: #8eb7e8;
+        background: #898b9c;
     }
   }
 
   &.resend {
     @extend .dark-gray;
-    background: #8eb7e8;
+    background: #898b9c;
     color: white;
   }
 }

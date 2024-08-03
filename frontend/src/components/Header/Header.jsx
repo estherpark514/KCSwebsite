@@ -96,7 +96,9 @@ const Header = () => {
             )}
           </div>
           <Link to="/programs">
-            <div className="menu-item">Programs</div>
+            <div className="menu-item" style={{ textDecoration: "none" }}>
+              Programs
+            </div>
           </Link>
           {isLoggedIn && (
             <Link to="/resources">
@@ -104,7 +106,9 @@ const Header = () => {
             </Link>
           )}
           <Link to="/joinus">
-            <div className="menu-item">Join us</div>
+            <div className="menu-item" style={{ textDecoration: "none" }}>
+              Join us
+            </div>
           </Link>
         </div>
       </div>

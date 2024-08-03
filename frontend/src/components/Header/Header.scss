@@ -1,6 +1,5 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
-@import "../Button/Button.scss";
 
 .header {
   width: 100%;
@@ -10,16 +9,19 @@
   justify-content: space-between;
   padding: 2% 15%;
   box-sizing: border-box;
+  text-decoration: none;
 
   .menu {
     display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
+    text-decoration: none;
 
     .logo {
       width: 60px;
       height: 60px;
+      text-decoration: none;
     }
 
     .menu-items {
@@ -27,6 +29,7 @@
       display: flex;
       align-items: center;
       position: relative;
+      text-decoration: none;
       
       a {
         @extend .menu;
@@ -41,7 +44,7 @@
         }
 
         &:visited {
-          @extend .dark-gray;
+          color: inherit; /* Ensures the color stays the same after being clicked */
           text-decoration: none;
         }
       }
@@ -49,6 +52,7 @@
       .menu-item {
         margin-left: 20px;
         position: relative;
+        text-decoration: none;
 
         .dropdown-options {
           position: absolute;
@@ -60,14 +64,17 @@
           border: 1px solid #ccc;
           padding: 10px;
           z-index: 1;
+          text-decoration: none;
           
           .menu-item {
             margin: 5px 0;
+            text-decoration: none;
           }
         }
 
         &:hover .dropdown-options {
           display: flex;
+          text-decoration: none;
         }
 
         a {
@@ -79,6 +86,11 @@
             @extend .menu;
             text-decoration: underline;
             font-weight: 600;
+          }
+
+          &:visited {
+            color: inherit; /* Ensures the color stays the same after being clicked */
+            text-decoration: none;
           }
         }
       }
