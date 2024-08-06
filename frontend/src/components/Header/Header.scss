@@ -28,10 +28,10 @@ header {
   }
 
   .logo {
-    width: 1rem;
+    width: 4rem;
     aspect-ratio: 1 / 1;
   }
-  
+
   .navbar {
     @extend .menu;
     @extend .dark-gray;
