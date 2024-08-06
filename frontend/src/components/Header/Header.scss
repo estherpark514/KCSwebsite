@@ -27,6 +27,11 @@ header {
     align-items: center;
   }
 
+  .logo {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+  }
+  
   .navbar {
     @extend .menu;
     @extend .dark-gray;
