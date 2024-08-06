@@ -67,6 +67,7 @@
   @media only screen and (max-width: 900px) {
     padding: 2% 5%;
     margin: 0;
+    flex-direction: column;
 
     .about-gtkcs-content,
     .about-gtkcs-image {
