@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: flex-start;
   margin: 0;
-  // padding: 2% 15% 0% 15%;
 
   .slideshow-container {
     display: flex;
@@ -41,7 +40,6 @@
     .overlap-group-container {
       display: flex;
       flex-direction: row;
-      gap: 20px;
       overflow-x: scroll;
       scroll-behavior: smooth;
       padding-bottom: 10px;
@@ -51,7 +49,13 @@
   .overlap-group-wrapper {
     display: flex;
     flex-direction: column;
-    min-width: 300px; // Ensure each item has a fixed width
+    min-width: 300px;
+    margin-right: 20px; // Add margin to create gaps between containers
+
+    @media only screen and (max-width: 900px) {
+      min-width: 200px;
+      margin-right: 10px; // Reduce margin for smaller screens
+    }
   }
 
   .overlap-group-white,
@@ -60,7 +64,7 @@
     border-radius: 20px;
     height: 350px;
     position: relative;
-    width: 250px; // Ensure the item takes full width of its container
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,17 +72,31 @@
     padding: 20px;
     text-align: center;
 
+    @media only screen and (max-width: 900px) {
+      height: 280px;
+      width: 200px;
+    }
+
     .union {
       height: 200px;
       width: 200px;
       margin-bottom: 20px;
       margin-top: 10px;
+
+      @media only screen and (max-width: 900px) {
+        height: 160px;
+        width: 160px;
+      }
     }
 
     .text-wrapper-2 {
       @extend .paragraph4;
       margin-bottom: 20px;
       height: 40px;
+
+      @media only screen and (max-width: 900px) {
+        margin-bottom: 10px;
+      }
     }
 
     .more-wrapper {
