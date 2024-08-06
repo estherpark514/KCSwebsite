@@ -74,12 +74,16 @@ function Partners() {
           </div>
         </div>
       </div>
-      <div className="text-wrapper">Georgia Tech Student Organizations</div>
-      <Slideshow data={studentOrg} />
-      {/* <div className="text-wrapper">US Companies</div>
-      <Slideshow data={USCompanies} /> */}
-      <div className="text-wrapper">Korean Companies</div>
-      <Slideshow data={koreanCompanies} />
+      <div className="slideshows">
+        <div className="text-wrapper">Georgia Tech Student Organizations</div>
+        <div className="slideshow">
+          <Slideshow data={studentOrg} />
+        </div>
+        <div className="text-wrapper">Korean Companies</div>
+        <div className="slideshow">
+          <Slideshow data={koreanCompanies} />
+        </div>
+      </div>
     </>
   );
 }

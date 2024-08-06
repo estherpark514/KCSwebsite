@@ -97,19 +97,17 @@
       }
     }
   }
-}
-
-@media (max-width: 900px) {
-  .footer {
-    flex-direction: column;
-    // justify-content: flex-start;
-    align-items: flex-start;
-    .footer-phrase {
-      justify-content: flex-start;
+  @media only screen and (max-width: 900px) {
+      padding: 2% 5%;
+      flex-direction: column;
+      // justify-content: flex-start;
+      align-items: flex-start;
+      .footer-phrase {
+        justify-content: flex-start;
+      }
+      .footer-link-container {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
-    .footer-link-container {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
 }

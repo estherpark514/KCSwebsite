@@ -1,8 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faBars,
+  faTimes,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button/Button";
 import { VerifyButton } from "../VerifyButton/VerifyButton";
 import { AuthContext } from "../../../utils/AuthContext";
@@ -10,8 +16,11 @@ import { AuthContext } from "../../../utils/AuthContext";
 const Header = () => {
   const [logo, setLogo] = useState({});
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const navigate = useNavigate();
   const { isLoggedIn, setLoginStatus } = useContext(AuthContext);
+  const navRef = useRef();
 
   useEffect(() => {
     async function fetchHeader() {
@@ -31,6 +40,14 @@ const Header = () => {
     }
 
     fetchHeader();
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleLogout = () => {
@@ -57,62 +74,78 @@ const Header = () => {
     setShowDropdown(false);
   };
 
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
+
+  const closeNavbar = () => {
+    navRef.current.classList.remove("responsive_nav");
+  };
+
   return (
-    <div className="header">
-      <div className="menu">
-        <Link to="/">
-          <img className="logo" alt="Logo" src={logo.logo_image} link="/" />
-        </Link>
-        <div className="menu-items">
-          <div className="menu-item">
-            <div
-              className="about-us"
-              onMouseEnter={handleAboutUsHover}
-              onMouseLeave={handleAboutUsLeave}
-            >
-              About us{" "}
-              {showDropdown ? (
-                <FontAwesomeIcon icon={faChevronUp} />
-              ) : (
-                <FontAwesomeIcon icon={faChevronDown} />
-              )}
-            </div>
+    <header>
+      <Link to="/">
+        <img className="logo" alt="Logo" src={logo.logo_image} link="/" />
+      </Link>
+      <div className="navbar">
+        <nav className="nav" ref={navRef}>
+          <div
+            className="nav-item about-us"
+            onMouseEnter={handleAboutUsHover}
+            onMouseLeave={handleAboutUsLeave}
+          >
+            About us
+            <FontAwesomeIcon
+              icon={
+                isMobile
+                  ? faChevronRight
+                  : showDropdown
+                  ? faChevronUp
+                  : faChevronDown
+              }
+            />
             {showDropdown && (
-              <div
-                className="dropdown-options"
-                onMouseEnter={handleDropdownHover}
-                onMouseLeave={handleDropdownLeave}
-              >
-                <Link to="/about-gtkcs">
-                  <div className="menu-item">About GTKCS</div>
+              <div className="dropdown-options">
+                <Link to="/about-gtkcs" onClick={closeNavbar}>
+                  <div className="menu-item">
+                    About GTKCS
+                    <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
+                  </div>
                 </Link>
-                <Link to="/executives">
-                  <div className="menu-item">Our Team</div>
+                <Link to="/executives" onClick={closeNavbar}>
+                  <div className="menu-item">
+                    Our Team
+                    <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
+                  </div>
                 </Link>
-                <Link to="/partners">
-                  <div className="menu-item">Partners</div>
+                <Link to="/partners" onClick={closeNavbar}>
+                  <div className="menu-item">
+                    Partners
+                    <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
+                  </div>
                 </Link>
               </div>
             )}
           </div>
-          <Link to="/programs">
-            <div className="menu-item" style={{ textDecoration: "none" }}>
-              Programs
-            </div>
+
+          <Link to="/programs" className="nav-item" onClick={closeNavbar}>
+            Programs
+            <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
           </Link>
           {isLoggedIn && (
-            <Link to="/resources">
-              <div className="menu-item">RESOURCES</div>
+            <Link to="/resources" className="nav-item" onClick={closeNavbar}>
+              RESOURCES
+              <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
             </Link>
           )}
-          <Link to="/joinus">
-            <div className="menu-item" style={{ textDecoration: "none" }}>
-              Join us
-            </div>
+          <Link to="/joinus" className="nav-item" onClick={closeNavbar}>
+            Join us
+            <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
           </Link>
-        </div>
-      </div>
-      <div className="language-selector">
+          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+        </nav>
         <div className="auth">
           {isLoggedIn ? (
             <>
@@ -131,7 +164,10 @@ const Header = () => {
           )}
         </div>
       </div>
-    </div>
+      <button className="nav-btn" onClick={showNavbar}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+    </header>
   );
 };
 

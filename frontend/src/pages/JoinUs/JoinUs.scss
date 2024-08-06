@@ -6,6 +6,10 @@
   @extend .dark-gray;
   margin: 3% 0;
   text-align: center;
+
+  @media only screen and (max-width: 900px) {
+    padding: 2% 5%;
+  }
 }
 .student-container {
   box-sizing: border-box;
@@ -101,6 +105,10 @@
       }
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    padding: 2% 5%;
+  }
 }
 
 .sponsors-container {
@@ -145,6 +153,10 @@
         padding: 0 0 1% 0;
         margin: 0;
       }
+    }
+
+    @media only screen and (max-width: 900px) {
+      padding: 2% 5%;
     }
   }
   
