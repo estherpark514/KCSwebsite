@@ -157,7 +157,7 @@ function Signup() {
   };
 
   return (
-    <div className="group">
+    <div className="signup-group">
       <div className="title">Sign Up</div>
       <div className="text-wrapper-3">
         Only students with a Georgia Tech email account are eligible to create
@@ -182,7 +182,7 @@ function Signup() {
               className={!resendButtonStyle ? "white" : "resend"}
               onClick={handleEmailClick}
               disabled={emailError}
-              style={{ width: "80px" }}
+              style={{ width: "5rem",  marginLeft: "10px" }}
             />
           </div>
           {emailError && (
@@ -204,7 +204,7 @@ function Signup() {
               name={otpText}
               className={!otpButtonStyle ? "white" : "resend"}
               onClick={handleVerifyOTP}
-              style={{ width: "80px" }}
+              style={{ width: "5rem",  marginLeft: "10px" }}
             />
           </div>
         </div>
