@@ -25,6 +25,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 
+# CSRF_ALLOWED_ORIGINS = ["https://kcswebsite-production.up.railway.app/"]
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
@@ -88,6 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
+# If you're not using a database, you can remove this or set it to an empty dict
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -122,7 +124,7 @@ USE_TZ = True
 
 # Media files (uploads)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/mnt/volume/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
