@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Redirecting...</title>
     <script type="text/javascript">
-      const redirectTo = window.location.pathname;
-      window.location.replace(`${window.location.origin}${redirectTo}`);
+      // Extract the path and query parameters
+      const redirectTo = window.location.pathname + window.location.search;
+      
+      // Redirect to index.html with the hash version of the path and search
+      window.location.replace(`/index.html#${redirectTo}`);
     </script>
   </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, please click <a href="/">here</a>.</p>
+  </body>
 </html>
