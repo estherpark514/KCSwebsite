@@ -97,7 +97,7 @@ class Roles(models.Model):
 class Executive(models.Model):
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, default="")
-    # description = RichTextField(default="")
+    description = models.TextField(default="")
 
     def __str__(self):
         return f"Executive Team Role - {self.name}"

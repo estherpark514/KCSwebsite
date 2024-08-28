@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../../components/Button/Button";
 import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
-import "./Signup.scss";
+import "./Reset.scss";
 
-function Signup() {
+function Reset() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -50,17 +50,6 @@ function Signup() {
         console.error("Error:", error);
       });
   };
-
-  const majors = [
-    "Business",
-    "Computer Science",
-    "Electrical Computer Engineering",
-    "Industrial and Systems Engineering",
-    "Mechanical Engineering",
-    "Others",
-  ];
-
-  const standings = ["Freshman", "Sophomore", "Junior", "Senior"];
 
   const handleVerifyOTP = () => {
     fetch(`${import.meta.env.VITE_VERIFY_URL}`, {
@@ -157,11 +146,10 @@ function Signup() {
 
   return (
     <div className="signup-group">
-      <div className="title">Sign Up</div>
-      <div className="text-wrapper-3">
-        Only students with a Georgia Tech email account are eligible to create
-        an account.
-      </div>
+      <div className="title">Reset your password</div>
+      {/* <div className="text-wrapper-3">
+        Verify your email address to reset your password
+      </div> */}
       <div className="signup-content">
         <div className="signup-section">
           <div className="text-wrapper-1">Email</div>
@@ -181,7 +169,7 @@ function Signup() {
               className={!resendButtonStyle ? "white" : "resend"}
               onClick={handleEmailClick}
               disabled={emailError}
-              style={{ width: "5rem",  marginLeft: "10px" }}
+              style={{ width: "5rem", marginLeft: "10px" }}
             />
           </div>
           {emailError && (
@@ -203,7 +191,7 @@ function Signup() {
               name={otpText}
               className={!otpButtonStyle ? "white" : "resend"}
               onClick={handleVerifyOTP}
-              style={{ width: "5rem",  marginLeft: "10px" }}
+              style={{ width: "5rem", marginLeft: "10px" }}
             />
           </div>
         </div>
@@ -213,7 +201,7 @@ function Signup() {
             <input
               type="password"
               className="text-wrapper-2"
-              placeholder="Password"
+              placeholder="New password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -232,7 +220,7 @@ function Signup() {
             <input
               type="password"
               className={`text-wrapper-2 ${passwordMismatch ? "error" : ""}`}
-              placeholder="Confirm Password"
+              placeholder="Confirm new password"
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
             />
@@ -243,41 +231,9 @@ function Signup() {
             </div>
           )}
         </div>
-        <div className="signup-section">
-          <div className="text-wrapper-1">First Name (ENG)</div>
-          <div className="container">
-            <input
-              type="first name (eng)"
-              className="text-wrapper-2"
-              placeholder="First name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="signup-section">
-          <div className="text-wrapper-1">Last Name (ENG)</div>
-          <div className="container">
-            <input
-              type="last name (eng)"
-              className="text-wrapper-2"
-              placeholder="Last name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="signup-section">
-          <div className="text-wrapper-1">Major</div>
-          <Dropdown options={majors} onSelect={setMajor} />
-        </div>
-        <div className="signup-section">
-          <div className="text-wrapper-1">Class Standing</div>
-          <Dropdown options={standings} onSelect={setClassStanding} />
-        </div>
       </div>
       <VerifyButton
-        name="Create an account"
+        name="Continue"
         className="white"
         onClick={handleCreateAccount}
       />
@@ -285,4 +241,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Reset;

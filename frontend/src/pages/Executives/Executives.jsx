@@ -6,7 +6,7 @@ import "./Executives.scss";
 const Executives = () => {
   const [rolesData, setRoles] = useState([]);
   const [executiveData, setExecutive] = useState([]);
-  const [webManagementData, setWebManagementData] = useState([]);
+  // const [webManagementData, setWebManagementData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -33,16 +33,16 @@ const Executives = () => {
         const executiveResult = await executiveResponse.json();
         setExecutive(executiveResult);
 
-        const webManagementResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}website-management/`
-        );
-        if (!webManagementResponse.ok) {
-          throw new Error(
-            `Failed to fetch web management data. Status: ${webManagementResponse.status}`
-          );
-        }
-        const webManagementResult = await webManagementResponse.json();
-        setWebManagementData(webManagementResult);
+        // const webManagementResponse = await fetch(
+        //   `${import.meta.env.VITE_API_URL}website-management/`
+        // );
+        // if (!webManagementResponse.ok) {
+        //   throw new Error(
+        //     `Failed to fetch web management data. Status: ${webManagementResponse.status}`
+        //   );
+        // }
+        // const webManagementResult = await webManagementResponse.json();
+        // setWebManagementData(webManagementResult);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }

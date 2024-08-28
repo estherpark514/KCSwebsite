@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { VerifyButton } from "../../components/VerifyButton/VerifyButton";
 import "./Login.scss";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../utils/AuthContext";
 
 function Login() {
@@ -29,6 +30,10 @@ function Login() {
       alert("Incorrect email address or password");
       console.error("Error logging in:", error);
     }
+  };
+
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -63,8 +68,13 @@ function Login() {
         onClick={handleLogin}
         style={{ marginBottom: "20px" }}
       />
-      <div className="text-wrapper-4">Forgot your email address?</div>
-      <div className="text-wrapper-4">Forgot your password?</div>
+      <Link
+        className="text-wrapper-4"
+        to="/reset-password"
+        onClick={handleLinkClick}
+      >
+        Forgot your password?
+      </Link>
     </div>
   );
 }
