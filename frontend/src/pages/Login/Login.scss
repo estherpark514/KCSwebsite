@@ -36,6 +36,7 @@
         }
     }
     .text-wrapper-4 {
+        @extend .dark-gray;
         @extend .paragraph4;
         margin-top: 3px;
         text-decoration: none;

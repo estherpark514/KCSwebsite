@@ -146,7 +146,7 @@ const Header = () => {
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </nav>
-        <div className="auth">
+        {/* <div className="auth">
           {isLoggedIn ? (
             <>
               <Button name="PROFILE" className="white" link="/profile" />
@@ -162,7 +162,7 @@ const Header = () => {
               <Button name="SIGN UP" className="gray" link="/signup" />
             </>
           )}
-        </div>
+        </div> */}
       </div>
       <button className="nav-btn" onClick={showNavbar}>
         <FontAwesomeIcon icon={faBars} />

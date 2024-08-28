@@ -51,6 +51,35 @@ function Signup() {
       });
   };
 
+  const handleResendOtp = () => {
+    if (!email.endsWith("@gatech.edu")) {
+      alert("Invalid email address");
+      return;
+    }
+
+    fetch(`${import.meta.env.VITE_RESEND_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response from server:", data);
+        if (data.status === 200) {
+          alert("OTP code resent successfully");
+        } else {
+          alert("Failed to resend OTP code");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   const majors = [
     "Business",
     "Computer Science",
@@ -179,7 +208,7 @@ function Signup() {
             <VerifyButton
               name={buttonText}
               className={!resendButtonStyle ? "white" : "resend"}
-              onClick={handleEmailClick}
+              onClick={resendButtonStyle ? handleResendOtp : handleEmailClick}
               disabled={emailError}
               style={{ width: "5rem",  marginLeft: "10px" }}
             />

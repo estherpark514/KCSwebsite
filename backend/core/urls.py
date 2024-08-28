@@ -29,6 +29,7 @@ urlpatterns = [
     path("verify/", VerifyOTP.as_view()),
     path("signup/", SignupAPI.as_view()),
     path("login/", LoginAPI.as_view()),
+    path("resend-otp/", ResendOTP.as_view()),
 ]
 
 if settings.DEBUG:

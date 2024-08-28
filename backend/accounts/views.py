@@ -5,6 +5,7 @@ from .serializers import *
 from .emails import *
 from rest_framework import status
 from django.contrib.auth import authenticate
+from .utils import check_email_exists
 
 class RegisterAPI(APIView):
     def post(self, request):
@@ -47,6 +48,46 @@ class RegisterAPI(APIView):
                 }
             )
 
+class ResendOTP(APIView):
+    def post(self, request):
+        try:
+            email = request.data.get('email')
+            
+            if not email:
+                return Response(
+                    {
+                        "status": 400,
+                        "message": "Email is required",
+                    }
+                )
+            
+            # Check if email is registered
+            user = CustomUser.objects.filter(email=email, is_verified=False)
+            if not user.exists():
+                return Response(
+                    {
+                        "status": 400,
+                        "message": "Email not registered or already verified",
+                    }
+                )
+            
+            # Send OTP
+            send_otp_via_email(email)
+            
+            return Response(
+                {
+                    "status": 200,
+                    "message": "OTP resent successfully",
+                }
+            )
+        except Exception as e:
+            return Response(
+                {
+                    "status": 500,
+                    "message": "Internal server error",
+                    "data": str(e),
+                }
+            )
 
 class VerifyOTP(APIView):
     def post(self, request):
